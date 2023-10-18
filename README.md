@@ -1,4 +1,4 @@
-## List of project
+## Project lists
 
 - [**odin-recipes**](https://jose-c0-odin-recipes.netlify.app/)
 
