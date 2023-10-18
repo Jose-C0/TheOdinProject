@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Papper Scissors</title>
+  <link rel=stylesheet href="./index.css">
+  <script src="./index.js" defer></script>
+</head>
+
+<body>
+  <div id="inner-container">
+    <div class="text-container">
+      <h1>Rock Paper Scissors</h1>
+      <h3 id="textResultRound"></h3>
+       <p id="textFirst5">First to score 5 points wins</p>
+      <p id="textOver"></p>
+    </div>
+    <div class="container-cards">
+      <div class="card">
+        <h2>YOU</h2>
+        <p id="scoreYou">Score: 0</p>
+        <div class="btn-container-rps">
+          <button id="btn-rock">
+            rock
+            <!-- <img src="./images/rock.png" alt=""> -->
+          </button>
+          <button id="btn-papper">
+            papper
+            <!-- <img src="./images/papper.png" alt=""> -->
+          </button>
+          <button id="btn-scissors">
+            scissors
+            <!-- <img src="./images/Scissors.png" alt=""> -->
+          </button>
+        </div> 
+      </div>
+      <div class="card">
+        <h2>COMPUTER</h2>
+        <p id="scoreComputer">Score: 0</p>
+        <div class="btn-container-rps">
+          <button id="pc-btn-rock">
+            rock
+          </button>
+          <button id="pc-btn-papper">
+            papper
+          </button>
+          <button id="pc-btn-scissors">
+            scissors
+          </button>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-start">
+          <span class="close">&times;</span>
+          <h2>GAME OVER</h2>
+        </div>
+        <p id="msgModal"> </p>
+        <p id="score"></p>
+        <button class="continue">Continue</button>
+      </div>
+    </div>
+</body>
+
+</html>
