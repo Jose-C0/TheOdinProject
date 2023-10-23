@@ -1,0 +1,14 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Open sans-serif;
+    overflow: auto;
+}
+
+.grid-container
+{
+    display: grid;
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+}
