@@ -10,67 +10,80 @@ const btn_black = document.getElementById("btn-black");
 const btn_rgb = document.getElementById("btn-rgb");
 const btn_boxesNumber = document.getElementById("btn-boxesNumber");
 
+const textRight = document.getElementById("text-right");
+
 // Create 16 * 16 div in grid-container
-// TODO:4.	Añade un botón en la parte superior de la pantalla que enviará al
-// usuario una ventana emergente preguntando por el número de cuadrados por lado
-// para la nueva cuadrícula.
-for (let index = 0; index < 256; index++) {
+let numberOfBox = 256;
+
+for (let index = 0; index < numberOfBox; index++) {
   div = document.createElement("div");
   div.className = "box";
   grid.appendChild(div);
 }
-let longBox = 16;
-let widthBox = 16;
 
-let boxes = grid.querySelectorAll(".box");
 // Agregar el evento 'mouseover' a cada elemento .box
+let boxes = grid.querySelectorAll(".box");
+SetEventMouseover(numberOfBox);
 
-let idRgbActive = false;
-boxes.forEach(function (box) {
-  box.addEventListener("mouseover", function () {
-    // Código que se ejecutará cuando el mouse pase por encima del elemento .box
-    // TODO:4.	Añade un botón en la parte superior de la pantalla que enviará al
-    btn_boxesNumber.onclick = () => {
-      let aNumber = Number(
-        window.prompt(
-          "Insert the number of boxes you want (min: 16 max: 100)",
-          "16"
-        )
-      );
+function SetEventMouseover(numberOfBox) {
+  let idRgbActive = false;
+  textRight.textContent = "Number of boxes: " + numberOfBox;
 
-      for (let index = 0; index < 256; index++) {
-        grid.removeChild(div);
-      }
+  boxes.forEach(function (box) {
+    let alpha = 0.15;
+    box.addEventListener("mouseover", function () {
+      // Code to be executed when the mouse hovers over the .box element
+      let r = getRandom(0, 255);
+      let g = getRandom(0, 255);
+      let b = getRandom(0, 255);
 
-      for (let index = 0; index < aNumber; index++) {
-        div = document.createElement("div");
-        div.className = "box";
-        grid.appendChild(div);
-      }
-    };
-    let r = getRandom(0, 255);
-    let g = getRandom(0, 255);
-    let b = getRandom(0, 255);
+      // If one of the buttons is pressed, the color in the box is returned.
+      idRgbActive === false
+        ? (box.style.backgroundColor = `rgb(0,0,0 ,${alpha})`)
+        : (box.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${alpha})`);
 
-    // Si uno de los botones es presionado se retorna el color en el cuadro
-    idRgbActive === false
-      ? (box.style.backgroundColor = "black")
-      : (box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`);
+      btn_black.onclick = () => {
+        idRgbActive = false;
+      };
 
-    btn_black.onclick = () => {
-      idRgbActive = false;
-    };
+      btn_rgb.onclick = () => {
+        idRgbActive = true;
+      };
 
-    btn_rgb.onclick = () => {
-      idRgbActive = true;
-    };
+      if (alpha <= 1) alpha += 0.1;
+    });
+
+    // Add 'mouseout' event to restore the original color when the mouse is removed
+    box.addEventListener("mouseout", function () {
+      // Restore background color
+      setTimeout(() => {
+        box.style.backgroundColor = "";
+      }, 1000);
+    });
   });
+}
 
-  // Agregar el evento 'mouseout' para restaurar el color original al quitar el mouse
-  box.addEventListener("mouseout", function () {
-    // Restaura el color de fondo
-    setTimeout(() => {
-      box.style.backgroundColor = "";
-    }, 1000);
-  });
-});
+// CHANGE NUMBER OF BOXES
+btn_boxesNumber.onclick = () => {
+  let numberOfBox = Number(
+    window.prompt("Insert the number of boxes you want", "256")
+  );
+
+  if (numberOfBox) {
+    boxes.forEach((item) => item.remove()); // Remmove all box
+    for (let index = 0; index < numberOfBox; index++) {
+      // Create boxes
+      div = document.createElement("div");
+      div.className = "box";
+      grid.appendChild(div);
+    }
+
+    boxes = grid.querySelectorAll(".box");
+
+    grid.style.gridTemplateColumns = `repeat(${Math.ceil(
+      Math.sqrt(numberOfBox)
+    )}, 1fr)`;
+
+    SetEventMouseover(numberOfBox);
+  }
+};
