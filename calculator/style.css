@@ -5,7 +5,8 @@ body {
   overflow: auto;
   background-size: cover;
   background-color: rgb(255, 255, 255);
-  
+  font-size: xx-large;
+
 }
 
 .container-calculator {
@@ -28,7 +29,20 @@ body {
 }
 #display {
   background-color: rgba(25, 118, 210, 0.836);
-  height: fit-content;
+  height: 2em;
   color: white;
   grid-column: 1/6;
+}
+
+#calculator button{
+  background-color: lemonchiffon;
+  width: 50px;
+  height: 50px;
+}
+
+#calculator #btn-del{
+  background-color: tomato;
+}
+#calculator #dot{
+  font-size: 30px;
 }
