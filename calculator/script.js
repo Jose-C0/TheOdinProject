@@ -156,15 +156,6 @@ function Divide(a, b) {
     }
 }
 
-function operation(operator, num1, num2) {
-    let result = 0;
-    if (operator === "*") result = Multiply(num1, num2);
-    if (operator === "/") result = Divide(num1, num2);
-    if (operator === "+") result = Add(num1, num2);
-    if (operator === "-") result = Subtract(num1, num2);
-    return result;
-}
-
 function convertStringToNumbers(str) {
     let newArray = [];
     let otherStr = [];
