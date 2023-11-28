@@ -4,7 +4,7 @@
 
 This project is a calculator using HTML, CSS and JavaScript that contains functions for all basic mathematical operators (multiplication, division, addition and subtraction). Users can interact with it via mouse or keyboard.
 
-Inspirado por The Odin Project para la construcción del proyecto utilicé.
+Inspired by The Odin Project for the construction of the project I used:
 
 - HTML5 for the structure.
 - Keyboard support
