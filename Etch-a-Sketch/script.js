@@ -2,8 +2,6 @@ function getRandom(min, max) {
   return parseInt(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
-let grid = document.getElementById("grid-container");
-let div = document.createElement("div");
 
 // button
 const btn_black = document.getElementById("btn-black");
@@ -11,6 +9,9 @@ const btn_rgb = document.getElementById("btn-rgb");
 const btn_boxesNumber = document.getElementById("btn-boxesNumber");
 
 const textRight = document.getElementById("text-right");
+
+let grid = document.getElementById("grid-container");
+let div = document.createElement("div");
 
 // Create 16 * 16 div in grid-container
 let numberOfBox = 256;
