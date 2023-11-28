@@ -1,4 +1,5 @@
 ## Project lists
+[![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
 
 - [**odin-recipes**](https://jose-c0-odin-recipes.netlify.app/)
 
