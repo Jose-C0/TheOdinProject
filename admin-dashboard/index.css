@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "myNorce-Bold";
+  src: url(Norse-Bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+
+}
+
+:root {
+  font-family: Roboto;
+  font-size: 15px;
+  --color-white: #ffffff;
+  --color-gray: hwb(221 7% 85% / 0.658);
+  --color-blue: #2563eb;
+}
+
+.container {
+  background-color: skyblue;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 2fr 1fr/ 1fr 3fr;
+  grid-template-areas:
+    "menu header "
+    "menu main"
+    "menu main"
+  ;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: darkred;
+
+}
+
+.header {
+  grid-area: header;
+  background-color: salmon;
+  padding: 10px;
+}
+
+.main {
+  grid-area: main;
+  background-color: khaki;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 20px 10px 30px;
+  
+  
+}
+
+
+
+/* ------- START: header */
+/* Part Up: search-notification */
+.header amp-img{
+  width: 30px;
+  height: 30px;
+}
+
+
+.search-notification{
+  margin-bottom: 20px;
+}
+
+.search {
+  display: flex;
+  gap: 12px;
+}
+
+.search input {
+  /* search input */
+  border-radius: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 1px solid var(--color-white);
+  outline: none;
+  /* width: 100vh; */
+
+}
+
+ 
+
+.profile-notification {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.profile-notification .xavatario{
+  border-radius: 30px;
+  width: 45px;
+  height: 45px;
+
+}
+
+
+
+/* Part Down: info-user */
+.profile-text-img {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+}
+.profile-text-img amp-img {
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+}
+
+.profile-text-img span {
+  font-size: calc(1rem - 2px);
+}
+
+.profile-text-img img{  
+  width: 50px;
+  height: 50px;
+}
+
+.search-notification, .info-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+ }
+
+.buttons-info-user {
+  display: flex;
+  gap: 20px;
+}
+
+.buttons-info-user > button{
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 25px;
+  width: 6vw;
+  height: 6vh;
+  border: var(--color-blue);
+  
+ }
+
+
+
+/* ------- END: header */
+
+/* ------- START: YOUR PROJECTS */
+.allProject {
+  background-color: aqua;
+  /* grid-row-start: 1;
+  grid-row-end: 3; */
+  overflow: auto;
+  
+ }
+
+/* ------- START:All cards  */
+.article { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.article .card {
+  height: 200px;
+  background-color: aliceblue;
+  width: max(50%, 350px);
+}
+
+.card p {
+  padding: 5px;
+}
+
+.icons-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-content: flex-start;
+  justify-content: flex-end;
+
+
+}
+.icons-cards img {
+  width: 30px;
+  height: 30px;
+  background-color: blueviolet;
+}
+
+/* ------- END: All cards  */
+
+/* ------- END: YOUR PROJECTS */
+
+
+/* ------- START: Announcements*/
+.announcements {
+  background-color: fuchsia;
+  height: 45%;
+ 
+}
+
+.info-announcements {
+  height: max-content;
+  padding: 11px;
+  border-radius: 10px;
+  background: white;
+
+}
+
+.info-announcements p {
+  font-size: calc(1rem - 3px);
+}
+
+/* ------- END: Announcements*/
+
+
+/* ------- START: trending*/
+.trending {
+  background-color: darkgreen;
+  /* width: 20vw; */
+  height: 55%;
+
+ 
+}
+.info-trending {
+  background-color: var(--color-white);
+  border-radius: 10px;
+}
+
+.card-trending {
+  display: flex;;
+  gap: 10px;
+  padding: 11px;
+}
+
+.card-trending span {
+  color: var(--color-gray);
+  font-weight: bold;
+}
+
+.card-trending > amp-img{
+  /* TODO: cambiar div po img */
+  height: 34px;
+  width: 34px;
+  border-radius: 20px;
+}
+
+/* ------- END: trending*/
+
+
