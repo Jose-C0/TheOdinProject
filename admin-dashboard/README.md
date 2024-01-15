@@ -2,7 +2,7 @@
 
 [![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
 
-Implementation of a form for a signup page, the form is used to validate data.
+Implementation of a admin dashboard
 
 Inspired by The Odin Project for the construction of the project I used:
 
@@ -13,7 +13,7 @@ Inspired by The Odin Project for the construction of the project I used:
 - Maintain clean code practices
 
 ### Preview
-![](./preview.png)
+![](./images/preview.png)
 
 ### Live:
-https://jose-c0-sign-up.netlify.app/
+https://jose-c0-admin-dashboard.netlify.app/

@@ -186,7 +186,7 @@ body {
   background-color: var(--color-white);
   width: max(10%, 300px);
   padding: 10px;
-  border-left: 6px solid #ca8a04;
+  border-left: 6px solid red;
   border-radius: 12px;
 }
 
