@@ -20,6 +20,7 @@ body {
 :root {
   font-family: Roboto;
   font-size: 15px;
+  --color-black: black;
   --color-white: #ffffff;
   --color-gray: hwb(221 7% 85% / 0.658);
   --color-blue: #2563eb;
@@ -41,6 +42,8 @@ body {
 .menu {
   grid-area: menu;
   background-color: darkred;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -64,7 +67,8 @@ body {
 
 /* ------- START: header */
 /* Part Up: search-notification */
-.header amp-img{
+.header amp-img,
+.header img{
   width: 30px;
   height: 30px;
 }
@@ -117,7 +121,9 @@ body {
   align-items: center;
 
 }
-.profile-text-img amp-img {
+.profile-text-img amp-img,
+.profile-text-img img 
+{
   border-radius: 30px;
   width: 60px;
   height: 60px;
@@ -250,7 +256,8 @@ body {
   font-weight: bold;
 }
 
-.card-trending > amp-img{
+/* .card-trending > amp-img, */
+.card-trending  .xavatario {
   /* TODO: cambiar div po img */
   height: 34px;
   width: 34px;
@@ -258,5 +265,47 @@ body {
 }
 
 /* ------- END: trending*/
+
+/* ------- START: Menu*/
+ 
+.option {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding-left: 30px;
+
+}
+
+.menu a {
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: calc(1rem + 5px);
+}
+
+.menu a:hover {
+  background-color: skyblue;
+}
+
+.option amp-img,
+.option img 
+{
+  height: 34px;
+  width: 34px;
+
+}
+
+.menu-up{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.dashboard{
+  margin-top: 20px;
+
+}
+
+/* ------- END: Menu*/
+
 
 
