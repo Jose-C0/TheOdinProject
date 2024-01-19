@@ -1,0 +1,69 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.iconTheme": "vscode-icons",
+        "githubIssues.queries": [
+          {
+            "label": "Mis incidencias",
+            "query": "default"
+          },
+          {
+            "label": "Problemas creados",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+          },
+          {
+            "label": "Problemas recientes",
+            "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+          }
+        ],
+        "workbench.colorTheme": "Monokai Dimmed",
+        "git.autofetch": true,
+        "workbench.startupEditor": "none",
+        "terminal.integrated.fontSize": 18,
+        "editor.fontSize": 22,
+        "editor.minimap.scale": 2,
+        "editor.minimap.autohide": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.formatOnSave": true,
+        "editor.linkedEditing": true,
+        "editor.guides.bracketPairs": true,
+        "editor.stickyScroll.enabled": true,
+        "editor.fontLigatures": false,
+        "gitlens.graph.minimap.dataType": "lines",
+        "liveServer.settings.donotShowInfoMsg": true,
+        "liveServer.settings.donotVerifyTags": true,
+        "git.enableSmartCommit": true,
+        "terminal.integrated.env.linux": {},
+        "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+        "workbench.settings.applyToAllProfiles": [],
+        "console-ninja.featureSet": "Community",
+
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[html]": {
+          "editor.defaultFormatter": "vscode.html-language-features"
+        }
+      },
+      "extensions": [
+        "xabikos.JavaScriptSnippets",
+        "vscode-icons-team.vscode-icons",
+        "wayou.vscode-todo-highlight",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer",
+        "oderwat.indent-rainbow",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        "pranaygp.vscode-css-peek",
+        "WallabyJs.console-ninja",
+        "aaron-bond.better-comments",
+        "kisstkondoros.vscode-gutter-preview"
+      ]
+    }
+  }
+}
