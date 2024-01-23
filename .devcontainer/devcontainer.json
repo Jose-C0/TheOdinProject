@@ -20,7 +20,7 @@
             "query": "state:open repo:${owner}/${repository} sort:updated-desc"
           }
         ],
-        "workbench.colorTheme": "Monokai Dimmed",
+        "workbench.colorTheme": "Monokai Dimmed+Vibrant",
         "git.autofetch": true,
         "workbench.startupEditor": "none",
         "terminal.integrated.fontSize": 18,
@@ -50,6 +50,7 @@
         }
       },
       "extensions": [
+        "alexravenna.monokai-dimmed-vibrant",
         "xabikos.JavaScriptSnippets",
         "vscode-icons-team.vscode-icons",
         "wayou.vscode-todo-highlight",
@@ -62,7 +63,8 @@
         "pranaygp.vscode-css-peek",
         "WallabyJs.console-ninja",
         "aaron-bond.better-comments",
-        "kisstkondoros.vscode-gutter-preview"
+        "kisstkondoros.vscode-gutter-preview",
+        "johnpapa.winteriscoming"
       ]
     }
   }
