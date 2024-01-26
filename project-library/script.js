@@ -38,50 +38,44 @@ const setDefaultBooks = () => {
 };
 
 let addNewBook = document.getElementById("addNewBook");
+
 addNewBook.addEventListener("click", () => {
+
   let b1 = new Book("El Arte De La Guerra", "Maquiavvelo", 60, true, true);
 
   myLibrary.push(b1);
 
-  console.log(myLibrary.length);
-
-  let item = myLibrary.at(-1);
-  console.log("elemnto: " + myLibrary.at(-1));
-
-  let containerClassLibrary = document.querySelector(".container");
-
-  //  while the element is true, it is created on the screen
-  let setDiv = document.createElement("div");
-  setDiv.className = "card bookNumber-" + countOfBookLibrary++;
-  setDiv.innerHTML = `
-        <h2 class="title">${myLibrary.at(-1).title}</h2>
-        <div class="info-card">
-          <p>Author: ${myLibrary.at(-1).author}</p>
-          <p>Pages: ${myLibrary.at(-1).pages}</p>
-          <p>Was Read: ${myLibrary.at(-1).wasRead}</p>
-        </div>
-        <div class="options-card">
-          <button class="btn-edit" type="button">Edit</button>
-          <button onclick="deleteBookToLibrary(this)" class="btn-delete" type="button">Delete</button>
-        </div>
-
-     `;
-
-  containerClassLibrary.appendChild(setDiv);
+  setCardInDom(myLibrary.at(-1));
 });
 
 function addBookToLibrary() {
-  // do stuff here
-
-  let containerClassLibrary = document.querySelector(".container");
-
   // Create items in html for view
   myLibrary.map((item) => {
-    if (item.state) {
-      //  while the element is true, it is created on the screen
-      let setDiv = document.createElement("div");
-      setDiv.className = "card bookNumber-" + countOfBookLibrary++;
-      setDiv.innerHTML = `
+    //  while the element is true, it is created on the screen
+    if (item.state) setCardInDom(item);
+
+  });
+}
+
+function deleteBookToLibrary(button) {
+  var card = button.closest(".card");
+  
+  // update de state of myLibrary
+  let indexOfBook = Number(card.className.replace("card bookNumber-", ""));
+
+  // while the element is true, it is created on the screen
+  myLibrary[indexOfBook].state = false;
+
+  card.parentNode.removeChild(card);
+}
+
+let containerClassLibrary = document.querySelector(".container");
+
+function setCardInDom (item) {
+
+  let setDiv = document.createElement("div");
+  setDiv.className = "card bookNumber-" + countOfBookLibrary++;
+  setDiv.innerHTML = `
         <h2 class="title">${item.title}</h2>
         <div class="info-card">
           <p>Author: ${item.author}</p>
@@ -95,58 +89,15 @@ function addBookToLibrary() {
 
      `;
 
-      containerClassLibrary.appendChild(setDiv);
-    }
-  });
-}
-// let setBook = new Book();
-// let btnDelete = document.querySelector(".btn-delete");
-// btnDelete.addEventListener("click", funcionHola);
-// function funcionHola() {
-//   console.log("sa");
-// }
+  return containerClassLibrary.appendChild(setDiv);
+};
 
-//   var card = button.closest(".card");
-//   console.table(card.className);
 
-//   // update de state of myLibrary
-//   let indexOfBook = [Number(card.className.replace("card bookNumber-", ""))];
-
-//   // while the element is true, it is created on the screen
-//   myLibrary[indexOfBook].state = false;
-
-//   console.table(myLibrary);
-
-//   card.parentNode.removeChild(card);
-// });
-
-function deleteBookToLibrary(button) {
-  var card = button.closest(".card");
-  console.table(card.className);
-
-  // update de state of myLibrary
-  let indexOfBook = Number(card.className.replace("card bookNumber-", ""));
-  console.log("indexOfBook  " + indexOfBook);
-  console.log("myLibrary  " + myLibrary);
-
-  // while the element is true, it is created on the screen
-  myLibrary[indexOfBook].state = false;
-
-  console.table(myLibrary);
-
-  card.parentNode.removeChild(card);
-}
 
 setDefaultBooks();
 
 addBookToLibrary();
 
-// TODO: 4. Añade un botón "NUEVO LIBRO" que muestre un formulario que permita
-// a los usuarios introducir los datos del nuevo libro:
-// autor, título, número de páginas, si se ha leído y cualquier otra cosa que desees.
-// Tú decides cómo mostrar este formulario.
-
-// TODO: 5. Añade un botón en la pantalla de cada libro para eliminarlo de la biblioteca.
 
 // TODO: 6. Añade un botón en la pantalla de cada libro para cambiar su estado de lectura.
 // Para facilitar esto usted querrá crear la función que cambia el estado de lectura de un

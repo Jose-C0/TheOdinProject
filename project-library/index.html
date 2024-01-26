@@ -9,13 +9,51 @@
 </head>
 
 <body>
+
     <main>
         <h1>My Library</h1>
         <button id="addNewBook" type="button">New Book</button>
         <div class="container">
 
         </div>
+        <section class="modal hidden">
+            <form>
+                <div class="modal-up">
+                    <button class="btn-close">⨉</button>
+ 
+                </div>
 
+                <!-- <div class="modal-main"> -->
+                <fieldset class="modal-main">
+                    <br>      
+                    <legend>Add Book In Library</legend>
+
+                    <label for="title">Title * </label>
+                    <input type="text" name="title" required placeholder="Title" />
+              
+
+                    <label for="title">Autor * </label>
+                    <input type="text" name="title" required placeholder="Autor" />
+
+                    <label for="title">Page * </label>
+                    <input type="number" name="title" required placeholder="Page" />
+ <br>               
+                    <label for="wasReading">Was Reading?</label>
+                <input type="checkbox" name="wasReading" placeholder="wasReading" value="true" />
+       
+                </fieldset>
+ 
+                <!-- </div> -->
+                <div class="modal-down">
+                    <button type="submit">Add</button>
+                    <input type="reset" value="Reset">
+
+                </div>
+
+
+            </form>
+
+        </section>
     </main>
 
 

@@ -1,13 +1,7 @@
 body {
-  background-color: rgb(255, 255, 255);
   height: 100vh;
+  position: relative;
 
-
-  /* TODO: fix */
-  /* background-image: url("./img.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: luminosity; */
 }
 
 * {
@@ -21,13 +15,6 @@ body {
   font-size: 16px;
 }
 
-/* main {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-} */
-
 .container {
   background: aquamarine;
   display: grid;
@@ -37,23 +24,11 @@ body {
   padding: 1px 10px 12px 10px;
 }
 
-/* border: 2px solid red; */
-/*
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
-  padding: 12px;
-  border-left: 12px solid red;
-  justify-content: center;
-}
-*/
 .card {
   display: grid;
   border: 2px solid red;
   border-radius: 12px;
   grid-template-rows: 70px 100px 40px;
-  /* grid-template-rows: repeat(2, minmax(12vh, 70px)); */
  
 }
 
@@ -82,9 +57,44 @@ body {
   
 }
 
- 
 .options-card {
   background-color: tomato;
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+/* =================== Start: SECTION MODAL ==================*/
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.4rem;
+  width: 70vw;
+  min-height: 300px;
+  padding: 1.3rem;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0.6rem 0 0.6rem;
+} 
+
+
+
+/* =================== End: SECTION MODAL ==================*/
+
