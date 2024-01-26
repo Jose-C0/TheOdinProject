@@ -72,7 +72,7 @@ body {
 
   gap: 0.4rem;
   width: 70vw;
-  min-height: 300px;
+  min-height: 150px;
   padding: 1.3rem;
   position: absolute;
   z-index: 2;
@@ -80,7 +80,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 15px;
 
-  top: 26%;
+  top: 40vh;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -92,7 +92,75 @@ body {
   flex-direction: column;
   gap: 0.6rem;
   margin: 0.6rem 0 0.6rem;
+  width: 60vw;
+  padding: 0 8px 8px 8px;
+
 } 
+
+.modal input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.btn-open {
+  position: absolute;
+  bottom: 150px;
+}
+
+.modal-up {
+  display: flex;
+  width: 60vw;
+  justify-content: flex-end;
+}
+
+.btn-close {
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.secWasReading {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal-down{
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+
 
 
 

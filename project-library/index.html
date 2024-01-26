@@ -11,42 +11,48 @@
 <body>
 
     <main>
+
         <h1>My Library</h1>
-        <button id="addNewBook" type="button">New Book</button>
+        <div>
+            <div class="overlay hidden"></div>
+            <button id="addNewBook" class="btn" type="button">New Book</button>
+
+        </div>
         <div class="container">
 
         </div>
+
         <section class="modal hidden">
+            <div class="modal-up">
+                <button class="btn-close">⨉</button>
+            </div>
             <form>
-                <div class="modal-up">
-                    <button class="btn-close">⨉</button>
- 
-                </div>
 
                 <!-- <div class="modal-main"> -->
                 <fieldset class="modal-main">
-                    <br>      
+                    <br>
                     <legend>Add Book In Library</legend>
 
                     <label for="title">Title * </label>
                     <input type="text" name="title" required placeholder="Title" />
-              
 
-                    <label for="title">Autor * </label>
-                    <input type="text" name="title" required placeholder="Autor" />
+                    <label for="title">Author * </label>
+                    <input type="text" name="title" required placeholder="Author" />
 
                     <label for="title">Page * </label>
                     <input type="number" name="title" required placeholder="Page" />
- <br>               
-                    <label for="wasReading">Was Reading?</label>
-                <input type="checkbox" name="wasReading" placeholder="wasReading" value="true" />
-       
+                    <br>
+                    <div class="secWasReading">
+                        <label for="wasReading">Was Reading?</label>
+                        <input type="checkbox" name="wasReading" placeholder="wasReading" value="true" />
+
+                    </div>
+
                 </fieldset>
- 
-                <!-- </div> -->
+
                 <div class="modal-down">
-                    <button type="submit">Add</button>
                     <input type="reset" value="Reset">
+                    <button class="btn" type="submit">Add</button>
 
                 </div>
 
@@ -54,6 +60,7 @@
             </form>
 
         </section>
+
     </main>
 
 
@@ -61,7 +68,7 @@
     <!-- 
     // TODO: 4. Añade un botón "NUEVO LIBRO" que muestre un formulario que permita
     // a los usuarios introducir los datos del nuevo libro:
-    // autor, título, número de páginas, si se ha leído y cualquier otra cosa que desees.
+    // Author, título, número de páginas, si se ha leído y cualquier otra cosa que desees.
     // Tú decides cómo mostrar este formulario.
     
     
@@ -71,6 +78,7 @@
      -->
 
     <script src="./script.js"></script>
+    <script src="./modal.js"></script>
 </body>
 
 </html>
