@@ -1,4 +1,6 @@
 const btnSubmit = document.getElementById("form");
+const containerClassLibrary = document.querySelector(".container");
+const openModalBtnEdit = document.querySelectorAll(".btn-edit");
 
 const myLibrary = [];
 let countOfBookLibrary = myLibrary.length;
@@ -39,29 +41,13 @@ const setDefaultBooks = () => {
   myLibrary.push(b1, b2, b3, b4);
 };
 
-btnSubmit.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const data = Object.fromEntries(new FormData(e.target));
-  elemnto = data;
-
-  alert(JSON.stringify(data));
-
-  let state = data.state == "on" ? "true" : "false";
-
-  let b = new Book(data.title, data.author, data.pages, data.wasRead, state);
-
-  console.log(b);
-});
-
-// let addNewBook = document.getElementById("addNewBook");
-
-// addNewBook.addEventListener("click", (e) => {
-
-//   let b1 = new Book("El Arte De La Guerra", "Maquiavvelo", 60, true, true);
-//   myLibrary.push(b1);
-//   setCardInDom(myLibrary.at(-1));
-// });
+// close modal function
+const closeModal2 = function () {
+  // close the modal when the close button and overlay is clicked
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  body.style.overflow = "auto";
+};
 
 function addBookToLibrary() {
   // Create items in html for view
@@ -82,8 +68,34 @@ function deleteBookToLibrary(button) {
 
   card.parentNode.removeChild(card);
 }
+// open modal function
+const openModal = function () {
+  
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  body.style.overflow = "hidden";
+};
 
-let containerClassLibrary = document.querySelector(".container");
+openModalBtnEdit.forEach((button) => {
+  button.addEventListener("click", openModal);
+
+
+});
+
+function editBookToLibrary(button) {
+  var card = button.closest(".card");
+
+  // update de state of myLibrary
+  let indexOfBook = Number(card.className.replace("card bookNumber-", ""));
+
+  console.table(myLibrary[indexOfBook]);
+
+  // myLibrary[indexOfBook].author = false;
+  // myLibrary[indexOfBook].pages = false;
+  // myLibrary[indexOfBook].wasRead = false;
+  // myLibrary[indexOfBook].title = false;
+  // myLibrary[indexOfBook].state = false;
+}
 
 function setCardInDom(item) {
   let setDiv = document.createElement("div");
@@ -105,10 +117,25 @@ function setCardInDom(item) {
   return containerClassLibrary.appendChild(setDiv);
 }
 
+function addBookToArray(e) {
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(e.target));
+
+  let wasReadStatus = data.wasRead === "on" ? "true" : "false";
+
+  let b = new Book(data.title, data.author, data.pages, wasReadStatus, false);
+
+  // add new item in array
+  myLibrary.push(b);
+
+  setCardInDom(myLibrary.at(-1));
+
+  closeModal2();
+}
+
+btnSubmit.addEventListener("submit", addBookToArray);
+
 setDefaultBooks();
 
 addBookToLibrary();
-
-// TODO: 6. Añade un botón en la pantalla de cada libro para cambiar su estado de lectura.
-// Para facilitar esto usted querrá crear la función que cambia el estado de lectura de un
-// libro en su instancia de prototipo de Libro.

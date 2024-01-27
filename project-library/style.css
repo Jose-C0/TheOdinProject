@@ -43,10 +43,11 @@ body {
   background-color: aliceblue;
   grid-row-start: 1;
   grid-row-end: 2;
-  font-size: calc(1em + 1vw);
   line-height: 1em;
- 
 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: calc(1em + 1vh);
 }
 
 .info-card {

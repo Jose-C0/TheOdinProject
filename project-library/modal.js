@@ -30,3 +30,4 @@ const openModal = function () {
 };
 // open modal event
 openModalBtn.addEventListener("click", openModal);
+
