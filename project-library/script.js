@@ -1,3 +1,5 @@
+const btnSubmit = document.getElementById("form");
+
 const myLibrary = [];
 let countOfBookLibrary = myLibrary.length;
 
@@ -37,29 +39,41 @@ const setDefaultBooks = () => {
   myLibrary.push(b1, b2, b3, b4);
 };
 
-let addNewBook = document.getElementById("addNewBook");
+btnSubmit.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-addNewBook.addEventListener("click", () => {
+  const data = Object.fromEntries(new FormData(e.target));
+  elemnto = data;
 
-  let b1 = new Book("El Arte De La Guerra", "Maquiavvelo", 60, true, true);
+  alert(JSON.stringify(data));
 
-  myLibrary.push(b1);
+  let state = data.state == "on" ? "true" : "false";
 
-  setCardInDom(myLibrary.at(-1));
+  let b = new Book(data.title, data.author, data.pages, data.wasRead, state);
+
+  console.log(b);
 });
+
+// let addNewBook = document.getElementById("addNewBook");
+
+// addNewBook.addEventListener("click", (e) => {
+
+//   let b1 = new Book("El Arte De La Guerra", "Maquiavvelo", 60, true, true);
+//   myLibrary.push(b1);
+//   setCardInDom(myLibrary.at(-1));
+// });
 
 function addBookToLibrary() {
   // Create items in html for view
   myLibrary.map((item) => {
     //  while the element is true, it is created on the screen
     if (item.state) setCardInDom(item);
-
   });
 }
 
 function deleteBookToLibrary(button) {
   var card = button.closest(".card");
-  
+
   // update de state of myLibrary
   let indexOfBook = Number(card.className.replace("card bookNumber-", ""));
 
@@ -71,8 +85,7 @@ function deleteBookToLibrary(button) {
 
 let containerClassLibrary = document.querySelector(".container");
 
-function setCardInDom (item) {
-
+function setCardInDom(item) {
   let setDiv = document.createElement("div");
   setDiv.className = "card bookNumber-" + countOfBookLibrary++;
   setDiv.innerHTML = `
@@ -90,14 +103,11 @@ function setCardInDom (item) {
      `;
 
   return containerClassLibrary.appendChild(setDiv);
-};
-
-
+}
 
 setDefaultBooks();
 
 addBookToLibrary();
-
 
 // TODO: 6. Añade un botón en la pantalla de cada libro para cambiar su estado de lectura.
 // Para facilitar esto usted querrá crear la función que cambia el estado de lectura de un

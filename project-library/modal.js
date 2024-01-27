@@ -2,11 +2,13 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn = document.querySelector(".btn-open");
 const closeModalBtn = document.querySelector(".btn-close");
+const body = document.querySelector("body");
 
 // close modal function
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  body.style.overflow = "auto";
 };
 
 // close the modal when the close button and overlay is clicked
@@ -24,6 +26,7 @@ document.addEventListener("keydown", function (e) {
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  body.style.overflow = "hidden";
 };
 // open modal event
 openModalBtn.addEventListener("click", openModal);
