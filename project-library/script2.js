@@ -1,3 +1,39 @@
+// ========= START: Modal
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn-open");
+const openModalBtnEdit = document.querySelectorAll(".btn-edit");
+const closeModalBtn = document.querySelector(".btn-close");
+const body = document.querySelector("body");
+
+// close modal function
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  body.style.overflow = "auto";
+};
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+// open modal function
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  body.style.overflow = "hidden";
+};
+// open modal event
+openModalBtn.addEventListener("click", openModal);
+// ========= END: Modal
+
 const btnSubmit = document.getElementById("form");
 const containerClassLibrary = document.querySelector(".container");
 
@@ -68,14 +104,15 @@ function deleteBookToLibrary(button) {
   card.parentNode.removeChild(card);
 }
 
-
-
 function editBookToLibrary(button) {
   const card = button.closest(".card");
 
   // update de state of myLibrary
   let indexOfBook = Number(card.className.replace("card bookNumber-", ""));
+
   console.table(myLibrary[indexOfBook]);
+
+   openModal(); 
 
   // myLibrary[indexOfBook].author = false;
   // myLibrary[indexOfBook].pages = false;
@@ -95,7 +132,7 @@ function setCardInDom(item) {
           <p>Was Read: ${item.wasRead}</p>
         </div>
         <div class="options-card">
-          <button class="btn-edit" type="button">Edit</button>
+          <button onclick="editBookToLibrary(this)" class="btn-edit" type="button">Edit</button>
           <button onclick="deleteBookToLibrary(this)" class="btn-delete" type="button">Delete</button>
         </div>
 

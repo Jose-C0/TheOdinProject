@@ -1,6 +1,7 @@
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn = document.querySelector(".btn-open");
+const openModalBtnEdit = document.querySelectorAll(".btn-edit");
 const closeModalBtn = document.querySelector(".btn-close");
 const body = document.querySelector("body");
 
@@ -31,3 +32,7 @@ const openModal = function () {
 // open modal event
 openModalBtn.addEventListener("click", openModal);
 
+// openModalBtnEdit.forEach((button) => {
+//   button.addEventListener("click", openModal);
+ 
+// });
