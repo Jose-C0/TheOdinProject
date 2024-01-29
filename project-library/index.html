@@ -31,10 +31,10 @@
                     <input type="text" id="title" name="title" required placeholder="Title" />
 
                     <label for="author">Author <span class="textRed">*</span> </label>
-                    <input type="text" id="author" name="author" required placeholder="Author" />
+                    <input type="text" id="author" name="author" maxlength="40" required placeholder="Author" />
 
                     <label for="pages">Pages <span class="textRed">*</span> </label>
-                    <input type="number" id="pages" name="pages" required placeholder="Pages" />
+                    <input type="number" id="pages" name="pages" min="0" max="100000000" required placeholder="Pages" />
                     <br>
                     <div class="secWasReading">
                         <label for="wasRead">Was Reading?</label>
@@ -45,10 +45,9 @@
                 </fieldset>
 
                 <div class="modal-down">
-                    <input type="reset" value="Reset">
+                    <input class="btn-reset" type="reset" value="Reset">
                     <button id="submit" class="btn" type="submit">Add</button>
-                    <button id="btn-edit-submit" class="btn btn-edit-submit" type="submit"
-                        style="display: none;">Save</button>
+                    <button id="btn-edit-submit" class="btn" type="submit" style="display: none;">Save</button>
                 </div>
 
 
@@ -65,9 +64,8 @@
 
 
 
-    <script src="./script2.js"></script>
-    <!-- <script src="./script.js"></script>
-    <script src="./modal.js"></script> -->
+    <script src="./script.js"></script>
+
 </body>
 
 </html>
