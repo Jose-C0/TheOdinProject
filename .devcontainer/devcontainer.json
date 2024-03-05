@@ -40,7 +40,6 @@
         "terminal.integrated.env.linux": {},
         "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
         "workbench.settings.applyToAllProfiles": [],
-        "console-ninja.featureSet": "Community",
 
         "[javascript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -61,7 +60,6 @@
         "eamodio.gitlens",
         "usernamehw.errorlens",
         "pranaygp.vscode-css-peek",
-        "WallabyJs.console-ninja",
         "aaron-bond.better-comments",
         "kisstkondoros.vscode-gutter-preview",
         "johnpapa.winteriscoming"
