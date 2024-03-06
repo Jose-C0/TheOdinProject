@@ -12,17 +12,22 @@ const getWeather = async () => {
     { mode: "cors" }
   );
   const data = await response.json();
-  
+
   console.log(data);
 
-  divContainer.appendChild(setP("name: " + data.location.name));
-  divContainer.appendChild(setP("country: " + data.location.country));
-  divContainer.appendChild(setP("lat: " + data.location.lat));
-  divContainer.appendChild(setP("localtime: " + data.location.localtime));
-  divContainer.appendChild(setP("localtime_epoch: " + data.location.localtime_epoch));
-  divContainer.appendChild(setP("lon: " + data.location.lon));
-  divContainer.appendChild(setP("region: " + data.location.region));
-  divContainer.appendChild(setP("tz_id: " + data.location.tz_id));
+  divContainer.appendChild(setP("Name: " + data.location.name) );
+ 
+  divContainer.appendChild(setP("Country: " + data.location.country));
+  divContainer.appendChild(setP("Lat: " + data.location.lat));
+  divContainer.appendChild(setP("Localtime: " + data.location.localtime));
+  divContainer.appendChild(
+    setP("Localtime_epoch: " + data.location.localtime_epoch)
+  );
+  divContainer.appendChild(setP("Lon: " + data.location.lon));
+  divContainer.appendChild(setP("Region: " + data.location.region));
+  divContainer.appendChild(setP("Tz_id: " + data.location.tz_id));
+
+  //Todo: img.src = data.data.images.original.url;
 };
 
 getWeather();
