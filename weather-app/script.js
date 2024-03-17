@@ -32,26 +32,28 @@ const getWeather = async (city) => {
   return setResult(data);
 };
 
-let listaPara = [];
+let arrayCity = [];
 
-async function findCity() {
-  //current.city.list
-  const response = await fetch("./current.city.list.json");
+function findCity() {
+  fetch("./current.city.list.json")
+    .then((response) => {
+      //console.log(response.json());
+      return response.json();
+    })
+    .then((response) => {
+      response.forEach((x, index) => {
+        //  This function is to create a list of all the countries in the form.
+        if (index <= 5000) {
+          arrayCity.push(x.name);
 
-  const name = await response.json();
+          const option = document.createElement("option");
+          option.innerHTML = `<option value="${x.name}">${x.name}</option>`;
 
-  name.forEach((x) => {
-    //  This function is to create a list of all the countries in the form.
-    const option = document.createElement("option");
-    option.innerHTML = `<option value="${x.name}">${x.name}</option>`;
-
-    citySelect.appendChild(option);
-  });
-
-  
+          citySelect.appendChild(option);
+        }
+      });
+    });
 }
-
-
 
 findCity();
 
