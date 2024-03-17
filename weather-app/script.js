@@ -33,36 +33,32 @@ const getWeather = async (city) => {
 };
 
 let listaPara = [];
-/*
-async function ejemplo() {
+
+async function findCity() {
   //current.city.list
   const response = await fetch("./current.city.list.json");
 
   const name = await response.json();
 
   name.forEach((x) => {
-    listaPara.push(x.name);
-        // Esta funcion es para crear una lista de todos los paises en el formulario
-
+    //  This function is to create a list of all the countries in the form.
     const option = document.createElement("option");
     option.innerHTML = `<option value="${x.name}">${x.name}</option>`;
 
     citySelect.appendChild(option);
   });
 
-  console.log(listaPara);
-
   
 }
-*/
 
-ejemplo();
 
-async function mo() {
+
+findCity();
+
+async function main() {
   citySelect.addEventListener("click", (e) => {
-    console.log(citySelect.value);
-    //getWeather(citySelect.value);
+    getWeather(citySelect.value);
   });
 }
 
-mo();
+main();
