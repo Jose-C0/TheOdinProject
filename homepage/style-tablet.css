@@ -1,0 +1,18 @@
+@media (min-width: 600px) {
+  /* SECTION 1  */
+  .section-1 {
+    background-color: tomato;
+  }
+
+  /* SECTION 2  */
+  .section-2 {
+  }
+
+  /* FOOTER  */
+  footer {
+    background-color: firebrick;
+    display: block;
+  }
+
+  
+}
