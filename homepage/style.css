@@ -4,7 +4,7 @@
 }
 * {
   margin: 0;
-  padding: 0; 
+  padding: 0;
   box-sizing: border-box;
   position: relative;
   /* border: 2px solid darkorchid;*/
@@ -99,7 +99,8 @@ main {
 
 .cont-tex-1 p {
   margin: 0 0 20px 0;
-  font-size: clamp(0.5rem, 6vh, 2rem);
+  font-size: clamp(0.5rem, 6vh, 1.5rem);
+  text-wrap: wrap;
   color: #565656;
   padding: 0px 10px 0 10px;
 }
