@@ -2,12 +2,13 @@
   font-family: "myNorce-Bold";
   src: url(Norse-Bold.otf);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  /* border: 2px solid darkorchid;*/
+  /* border: 2px solid darkorchid; */
 }
 
 body {
@@ -30,7 +31,7 @@ body {
 }
 h1 {
   margin-bottom: 0;
-  font-size: clamp(2.5rem, 8vh, 3.5rem);
+  font-size: clamp(2.2rem, 1.5rem, 3.5rem);
 }
 
 main {
@@ -39,9 +40,9 @@ main {
   grid-template:
     "section1" auto
     "section2" auto
-    "footer" auto;
+    "footer"   auto;
   overflow: auto;
-  row-gap: 8vh;
+  row-gap: 20vh;
 }
 
 /* SECTION 1  */
@@ -54,8 +55,8 @@ main {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-
   margin-bottom: 70px;
+
 }
 
 .container-image {
@@ -66,10 +67,10 @@ main {
   padding: 30px 10px 0 10px;
 }
 .background-s1 {
+  position: absolute;
   background-color: var(--color-blue);
   width: 100vw;
   height: clamp(25rem, 25.5rem, 30rem);
-  position: absolute;
   top: 0;
   z-index: 1;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
@@ -84,23 +85,27 @@ main {
 .name-profile {
   position: absolute;
   color: var(--color-white);
-  font-size: 4rem;
+  font-size: clamp(2.8rem, 2.9rem, 4rem);
+  text-wrap: pretty;
   top: 80%;
   left: 50%;
-  z-index: 2;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .cont-tex-1 {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 20px;
   text-align: center;
+  gap: 16px;
 }
 
 .cont-tex-1 p {
   margin: 0 0 20px 0;
-  font-size: clamp(0.5rem, 6vh, 1.5rem);
+  font-size: clamp(1rem, 1.4rem, 1.5rem);
   text-wrap: wrap;
+  text-align: justify;
   color: #565656;
   padding: 0px 10px 0 10px;
 }
@@ -108,8 +113,8 @@ main {
 .icons-social-network {
   display: flex;
   flex-direction: row;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 /* SECTION 2  */
 .section-2 {
@@ -119,6 +124,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-self: center;
+  gap: 6vh;
 }
 
 .container-box-sec-2 {
@@ -137,19 +143,22 @@ main {
 }
 
 .box:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  scale: 1.05;
+  box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 1);
 }
 
 .img-card {
-  background-color: #ca7599;
-  color: var(--color-white);
   display: flex;
-  font-size: 3rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
+  text-wrap: balance;
   text-align: center;
+  background-color: #ca7599;
+  font-size: 3rem;
+  color: var(--color-white);
   height: 15rem;
+
 }
 
 .title-card {
@@ -165,31 +174,31 @@ main {
 .description-card {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 10px;
   height: 12rem;
 }
 .txt-card {
   font-size: 1.2rem;
   color: var(--color-gray-input);
   padding: 0 3vw 0 4vw;
+  
 }
 
 /* FOOTER */
 footer {
-  background-color: var(--footer-background);
   grid-area: footer;
   color: var(--color-white);
+  background-color: var(--footer-background);
 }
 .cont-footer h1 {
   width: 100%;
-  justify-content: center;
   text-align: center;
 }
 .cont-footer {
   display: flex;
   flex-direction: column;
-  padding: calc(5%);
   align-items: flex-start;
+  padding: calc(5%);
   gap: 18px;
 }
 
