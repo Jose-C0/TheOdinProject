@@ -33,12 +33,11 @@
     font-size: clamp(2.8rem, 2.9rem, 4rem);
     transform: translate(-50%, -50%);
     text-wrap: pretty;
-
     top: 80%;
     left: 50%;
     z-index: 2;
   }
-  .cont-tex-1 {
+  .cont-text-1 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -59,7 +58,7 @@
     /*  font-size: 3.3rem;   */
   }
 
-  .cont-tex-1 p {
+  .cont-text-1 p {
     display: block;
     font-size: clamp(1.1rem, 1vw + 0.1rem, 0.6rem);
     text-wrap: wrap;
@@ -87,7 +86,9 @@
   .container-cards-sec-2 {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  .txt-card {
+    padding: 0 1rem 0 1rem;
+  }
   .icons-social-network.sec-2 {
     width: fit-content;
   }

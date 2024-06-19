@@ -29,7 +29,7 @@
     left: min(79%, 29rem);
     text-wrap: nowrap;
   }
-  .cont-tex-1 {
+  .cont-text-1 {
     background: var(--color-white);
     display: block;
     width: min(100vw - 40px, 77vw);
