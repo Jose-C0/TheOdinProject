@@ -47,12 +47,12 @@
     align-items: flex-start;
   }
 
-  .container-box-sec-2 {
+  .container-cards-sec-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 38px;
   }
-  .box {
+  .card {
     width: 300px;
   }
 
@@ -77,6 +77,7 @@
   .cont-footer {
     grid-area: cont-footer;
     padding: 0;
+    width: 80%;
   }
   footer .icons-social-network {
     grid-area: icons;
