@@ -10,11 +10,11 @@ Inspired by The Odin Project for the construction of the project I used:
 
 - HTML5 for the structure.
 - Use of CSS3 grid and flex to align elements.
-- Metlify to display the page.
+- Github to display the page.
 - Maintain clean code practices
 
 ### Preview
 ![](./preview.png)
 
 ### Live:
-https://jose-c0-rock-papper-scissors.netlify.app/
+https://jose-c0.github.io/TheOdinProject/Etch-a-Sketch/index.html

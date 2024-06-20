@@ -1,14 +1,16 @@
 ## Project lists
 [![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
 
-- [**odin-recipes**](https://jose-c0-odin-recipes.netlify.app/)
+- [**odin-recipes**]( https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
 
-- [**rock-paper-scissors**](https://jose-c0-rock-papper-scissors.netlify.app/)
+- [**rock-paper-scissors**]( https://jose-c0.github.io/TheOdinProject/rock-papper-scissors/index.html)
 
-- [**etch-a-sketch**](https://jose-c0-etch-a-sketch.netlify.app/)
+- [**etch-a-sketch**]( https://jose-c0.github.io/TheOdinProject/Etch-a-Sketch/index.html)
 
-- [**calculator**](https://jose-c0-calculator.netlify.app/)
+- [**calculator**]( https://jose-c0.github.io/TheOdinProject/calculator/index.html)
 
-- [**sign up**](https://jose-c0-sign-up.netlify.app/)
+- [**sign up**]( https://jose-c0.github.io/TheOdinProject/sign-up/index.html)
 
-- [**admin-dashboard**](https://jose-c0-admin-dashboard.netlify.app/)
+- [**admin-dashboard**]( https://jose-c0.github.io/TheOdinProject/admin-dashboard/index.html)
+
+- [**project-library**]( https://jose-c0.github.io/TheOdinProject/project-library/index.html)

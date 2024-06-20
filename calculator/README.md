@@ -9,25 +9,27 @@ Inspired by The Odin Project for the construction of the project I used:
 - HTML5 for the structure.
 - Keyboard support
 - Use of CSS3 grid and flex to align elements.
-- Metlify to display the page.
+- Github to display the page.
 - Maintain clean code practices
 
 ### Preview
+
 ![](./images/preview.png)
 
 ### Live:
-https://jose-c0-calculator.netlify.app/
 
-
+https://jose-c0.github.io/TheOdinProject/calculator/index.html
 
 ## Features
+
 ### Javascript
-                
+
 - The function **convertStringToNumbers(str)**. It receives a string as a parameter, stores the values in an array, converts the strings to numbers, keeps the operators as strings and the values that are expressed in scientific notation are converted to numbers.
 
-First I loop through each element of the string. I use the variable `num` to store each string value, if the string element is an operator belonging to `listValuesOperators`. I store in the array `newStr` the value that is in `num` and say that num is an empty string (num = "") to store the next element, then I store the operator in the array newStr. 
+First I loop through each element of the string. I use the variable `num` to store each string value, if the string element is an operator belonging to `listValuesOperators`. I store in the array `newStr` the value that is in `num` and say that num is an empty string (num = "") to store the next element, then I store the operator in the array newStr.
 
 After fulfilling the above conditions I move on to the next element of the string.
+
 ```javascript
   for (let index = 0; index < str.length; index++) {
     if (listValuesOperators.includes(str[index])) {
@@ -41,14 +43,15 @@ After fulfilling the above conditions I move on to the next element of the strin
 ```
 
 Si el elemento actual del for (str[index]) contine la expresión “e^x” hago un push en newStr de lo que tengo almacenado en num.
+
 ```javascript
-      if (num.includes("e^x")) newArray.push(num);
-      else newArray.push(Number(num));
+if (num.includes("e^x")) newArray.push(num);
+else newArray.push(Number(num));
 ```
 
 Como los números y “e^x” no pertenecen en listValuesOperators, num contiene números a la izquierda y derecha de la expresión “e^x” y de esa manera se almacena el coeficiente y exponente de la expresión de la notación científica. Example = num = "1e^x2".
 
-Al encontrar un operador "1e^x2" es almacenado en newStr. 
+Al encontrar un operador "1e^x2" es almacenado en newStr.
 
 ```javascript
     if (listValuesOperators.includes(str[index])) {
@@ -58,32 +61,29 @@ Al encontrar un operador "1e^x2" es almacenado en newStr.
       newArray.push(str[index]);
       num = "";
 ```
+
 Finally I use a for of in newStr to convert the expression in scientific notation to a number. Example: 1e^x2 = 100
 
 ```javascript
-  for (const iterator of newArray) {
-    if (
-      typeof iterator === "string" &&
-      !listValuesOperators.includes(iterator)
-    ) {
-      let stringSplit = iterator.split("");
-      let posAfterX = stringSplit.indexOf("x") + 1;
-      let posBeforeE = stringSplit.indexOf("e") - 1;
-      let exponent = Number(
-        stringSplit.slice(posAfterX, stringSplit.length).join("")
-      );
-      let coefficient = Number(stringSplit.slice(0, posBeforeE + 1).join(""));
+for (const iterator of newArray) {
+  if (typeof iterator === "string" && !listValuesOperators.includes(iterator)) {
+    let stringSplit = iterator.split("");
+    let posAfterX = stringSplit.indexOf("x") + 1;
+    let posBeforeE = stringSplit.indexOf("e") - 1;
+    let exponent = Number(
+      stringSplit.slice(posAfterX, stringSplit.length).join("")
+    );
+    let coefficient = Number(stringSplit.slice(0, posBeforeE + 1).join(""));
 
-      for (let index = 0; index < exponent; index++) {
-        coefficient += "0";
-      }
-      otherStr.push(Number(coefficient));
-      continue;
+    for (let index = 0; index < exponent; index++) {
+      coefficient += "0";
     }
-    otherStr.push(iterator);
+    otherStr.push(Number(coefficient));
+    continue;
   }
+  otherStr.push(iterator);
+}
 ```
-
 
 ```javascript
 String original - [“1”, “0”, "+", “5”, “0”, "+", "1”, “e^x”, “2"]
@@ -91,8 +91,7 @@ newStr - [10, "+", 50, "+", "1e^x2"]
 otherStr - [10, "+", 50, "+", 100]  // This is what the function returns.
 ```
 
-
-- The function **operation(positionOp, operand, string)**: Takes an operator (+, -, *, /) and 2 numbers and then returns the result of the operation.
+- The function **operation(positionOp, operand, string)**: Takes an operator (+, -, \*, /) and 2 numbers and then returns the result of the operation.
 
 ```javascript
 function operation(positionOp, operand, string) {
@@ -113,7 +112,7 @@ function operation(positionOp, operand, string) {
 - The function **finalScore(string)**: takes as parameter the result of the function convertStringToNumber. Example: finalScore([10, "+", 50, "+", 100])
 
 This function determines the priority of the operations:
-                
+
 1. multiplying.
 2. Division.
 3. Addition.
@@ -164,6 +163,7 @@ function finalScore(string) {
   return r;
 }
 ```
+
 ## HTML code
 
 Here is a brief explanation of the purpose of the HTML:

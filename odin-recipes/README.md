@@ -15,4 +15,4 @@ Flexbox is a layout technique that allows for flexible and fluid layouts with ea
 The website is published from a GitHub repository.
 
 
-Live: https://jose-c0-odin-recipes.netlify.app/
+Live: https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html 

@@ -18,4 +18,4 @@ Inspired by The Odin Project for the construction of the project I used:
 
 ### Live:
 
-https://jose-c0-project-library.netlify.app/
+https://jose-c0.github.io/TheOdinProject/project-library/index.html
