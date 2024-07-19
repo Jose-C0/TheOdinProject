@@ -1,9 +1,20 @@
 import "./App.css";
+import { Link } from "react-router-dom";
 import Profile from "./Components/Profile";
+import Spinach from "./Components/Spinach";
+import Popeye from "./Components/Popeye";
+
 function App() {
   return (
     <>
       <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="profile">Profile page</Link>
+            </li>
+          </ul>
+        </nav>
         <Profile name="Mauricio" age={63} />
         <Profile name={100} age="Mauricio" />
         <Profile name={[]} />
