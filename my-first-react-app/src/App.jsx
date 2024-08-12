@@ -1,8 +1,6 @@
 import "./App.css";
 import { Link } from "react-router-dom";
 import Profile from "./Components/Profile";
-import Spinach from "./Components/Spinach";
-import Popeye from "./Components/Popeye";
 
 function App() {
   return (
