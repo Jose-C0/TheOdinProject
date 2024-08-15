@@ -1,8 +1,7 @@
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
-const { error } = require("console");
-
+var eso = "no funciona";
 // Create server object
 const server = http.createServer((req, res) => {
   // Build file path
@@ -41,7 +40,7 @@ const server = http.createServer((req, res) => {
   if (contentType == "text/html" && extname == "") filePath += ".html";
 
   // log the filePath
-  console.log(filePath);
+  console.log("file" + filePath);
 
   // Read File
   fs.readFile(filePath, (err, content) => {
@@ -70,4 +69,6 @@ const server = http.createServer((req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () =>
+  console.log(`Server running on port ${PORT} ---> http://localhost:${PORT}`)
+);
