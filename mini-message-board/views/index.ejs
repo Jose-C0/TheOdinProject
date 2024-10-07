@@ -1,17 +1,12 @@
 <html>
+  <head>
+    <title>Homepage</title>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+  </head>
 
-<head>
-  <title>Homepage</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
+  <body>
+    <h1>Hola mundo</h1>
 
-<body>
-  <%- include('navbar', {links: links}) %>
-    <ul>
-      <% users.forEach((user)=> { %>
-        <%- include('user', {user: user}); %>
-          <% }); %>
-    </ul>
-</body>
-
+    <%= messages.forEach(x => x) %>
+  </body>
 </html>

@@ -1,10 +1,6 @@
 import express from "express";
-import router from "./routes/index.mjs"
-// import path from "path";
-// import { fileURLToPath } from "url";
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+import router from "./routes/index.mjs";
+import path from "path";
 
 const app = express();
 
@@ -13,12 +9,14 @@ const app = express();
 
 app.disable("x-powered-by"); // deshabilitar el header X-Powered-By: Express
 
-// app.set("view engine", "ejs");
+// settings
+app.set("view engine", "ejs");
+// app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(import.meta.dirname, "views"));
 
 // routes
 app.use(router);
 
- 
 app.use((req, res) => {
   res.status(404).send("No Found");
 });
