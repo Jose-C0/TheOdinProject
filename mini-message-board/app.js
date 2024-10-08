@@ -4,8 +4,9 @@ import path from "path";
 
 const app = express();
 
-// const assetsPath = path.join(__dirname, "public");
-// app.use(express.static(assetsPath));
+// styles
+const assetsPath = path.join(import.meta.dirname, "public");
+app.use(express.static(assetsPath));
 
 app.disable("x-powered-by"); // deshabilitar el header X-Powered-By: Express
 

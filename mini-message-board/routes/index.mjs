@@ -16,11 +16,11 @@ const messages = [
 ];
 
 router.get("/", (req, res) => {
-  res.render("index", { messages });
+  res.render("./pages/index", { messages });
 });
 
 router.get("/new", (req, res) => {
-  res.send("index g");
+  res.render("./pages/new")
 });
 
 export default router;
