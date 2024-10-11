@@ -32,7 +32,7 @@ button {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(155px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 12px;
   padding: 1px 10px 12px 10px;
 }
