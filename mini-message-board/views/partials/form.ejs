@@ -1,5 +1,5 @@
 <div id="container">
-  <form id="form-area" name="form">
+  <form id="form-area" name="form" method="POST" action="/new">
     <h1>Let's do this</h1>
 
     <div class="all-fields">
@@ -13,7 +13,10 @@
       </section>
     </div>
     <div class="final-form-pos">
-      <button type="submit" id="signin">Send</button>
+      <button type="button" id="btn-cancel" onclick="location.href='/'">
+        Cancel
+      </button>
+      <button type="submit" id="btn-signin">Send</button>
     </div>
   </form>
 </div>

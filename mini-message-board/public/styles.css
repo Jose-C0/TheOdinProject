@@ -78,6 +78,13 @@ button {
   font-weight: 800;
 }
 
+.author {
+  font-size: x-large;
+}
+.text {
+  display: flex;
+  align-items: center;
+}
 .options-card {
   grid-row-start: 4;
   grid-row-end: 4;

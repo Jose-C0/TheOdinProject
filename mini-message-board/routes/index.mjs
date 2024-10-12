@@ -20,7 +20,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("./pages/new")
+  res.render("./pages/new");
 });
+
+
+// router.post("", (req, res) => {
+//   messages.push({ text: messageText, user: messageUser, added: new Date() });
+//   res.redirect("/");
+// });
 
 export default router;
