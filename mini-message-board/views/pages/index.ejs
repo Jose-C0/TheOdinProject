@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini message</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <main>
-      <h1>Mini Message Board</h1>
 
-      <div class="container">
-        <% messages.forEach(item=> { %>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini message</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Mini Message Board</h1>
+
+    <div class="container">
+      <% messages.forEach(item=> { %>
         <dl class="card">
-          <dt class="info-card-span author"><%= item.user %></dt>
-          <dd class="info-card-span text"><%= item.text %></dd>
-          <dd class="info-card-span added"><%= item.added %></dd>
+          <dt class="info-card-span author">
+            <%= item.user %>
+          </dt>
+          <dd class="info-card-span text">
+            <%= item.text %>
+          </dd>
+          <dd class="info-card-span added">
+            <%= item.added %>
+          </dd>
           <div class="options-card">
-            <button class="btn-edit" type="button">Edit</button>
+            <button onclick="location.href='/detailMessages'" class="btn-edit" type="button">Edit</button>
           </div>
         </dl>
         <% }) %>
-        <!-- ojo -->
- 
 
-      <div class="overlay hidden"></div>
-      <button class="btn-open" onclick="location.href='/new';">+</button>
-    </main>
-  </body>
+        <div class="overlay hidden"></div>
+        <button class="btn-open" onclick="location.href='/new'">+</button>
+  </main>
+</body>
+
 </html>

@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
 }
+
 /* FORM */
 .form-container {
   display: flex;
@@ -14,29 +15,9 @@
   width: 70%;
 }
 
-.up {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: auto;
-  font-size: 12px;
-  height: 30%;
-  gap: 5rem;
-  padding-left: 2vw;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  height: 70%;
-  font-size: 2rem;
-}
-
 form#form-area {
   display: flex;
   width: 100vw;
-  /* height: 40vh; */
   background: rgb(255, 255, 255);
   flex-direction: column;
   padding-left: 2vw;
@@ -69,13 +50,12 @@ textarea {
 
 textarea {
   height: 20vh;
-  /* width: 50vh; */
 }
 .all-fields {
   display: flex;
   justify-content: flex-start;
-  flex-direction: row;
-  gap: 40px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form-left,
@@ -115,26 +95,13 @@ textarea {
   background-color: rgb(129, 129, 129);
 }
 .final-form-pos {
-  /* position: absolute;
-    bottom: 52px; */
+  display: flex;
+  gap: 20px;
+  align-self: end;
 }
 
 .form-final-sec {
   position: absolute;
   top: 75vh;
   font-size: calc(2rem - 6px);
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-.requirement {
-  font-size: 1rem;
-  color: red;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.hidden {
-  display: none;
 }
