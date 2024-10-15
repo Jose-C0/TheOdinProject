@@ -14,3 +14,5 @@
 - [**admin-dashboard**]( https://jose-c0.github.io/TheOdinProject/admin-dashboard/index.html)
 
 - [**project-library**]( https://jose-c0.github.io/TheOdinProject/project-library/index.html)
+
+- [**mini-message-board**]( https://jose-c0-mini-message-board.onrender.com )
