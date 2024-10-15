@@ -1,0 +1,20 @@
+<div id="container">
+  <form id="form-area" name="form" method="POST" action="/new">
+    <h1>Let's do this</h1>
+    <div class="all-fields">
+      <section class="form-up">
+        <label for="messageUser">Author’s Name : </label>
+        <input id="messageUser" type="text" name="messageUser" required />
+        <label for="messageText">Message : </label>
+        <textarea id="messageText" type="text" name="messageText" required>
+        </textarea>
+      </section>
+      <div class="final-form-pos">
+        <button type="button" id="btn-cancel" onclick="location.href='/'">
+          Cancel
+        </button>
+        <button id="btn-send">Send</button>
+      </div>
+    </div>
+  </form>
+</div>
