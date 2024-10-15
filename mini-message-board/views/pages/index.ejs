@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini message</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" type="image/x-icon" href="./images/message-icon.png">
 </head>
 
 <body>
@@ -14,46 +15,33 @@
     <h1>Mini Message Board</h1>
 
     <div class="container">
-      <% messages.forEach(item=> { %>
+      <% messages.forEach(item => { %>
         <dl class="card">
           <dt class="info-card-span author">
             <%= item.user %>
           </dt>
-          <dd class="info-card-span text">
+          <dt class="info-card-span text">
             <%= item.text %>
-          </dd>
-          <dd class="info-card-span added">
+          </dt>
+          <dt class="info-card-span added">
             <%= item.added %>
-          </dd>
-          <div class="options-card">
-            <!-- 
-            /<%= item.id %> 
-            <% isDetailPress = true %>"
-            -->
-            <!-- <button onclick="location.href='/detailMessages'" class="btn-edit" type="button">Detail</button> -->
-            <button class="btn-edit" type="button">
-              <a href="/detailMessages">Detail</a>
-              </button>
+          </dt>
+          <div class="options-card info-card-span">
+            <button 
+            onclick="location.href='/detailMessages/<%= item.id%>'"
+            class="btn-detail"
+            type="button"
+            >
+            Detail
+            </button>
           </div>
         </dl>
         <% }) %>
 
-        <div class="overlay hidden"></div>
-        <button class="btn-open" onclick="location.href='/new'">+</button>
+    </div>
+     
+    <button class="btn-open" onclick="location.href='/new'">+</button>
   </main>
-  <script>
-   /*
-    const btnDetail = document.querySelectorAll(".btn-edit");
-    btnDetail.forEach((button) => {
-      button.addEventListener("click", () => {
-        const eso = "<%=  isDetailPress %>"
-        alert(eso)
-      })
-    });
-  
-    */
-
-  </script>
 
 </body>
 

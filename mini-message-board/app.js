@@ -8,13 +8,12 @@ const app = express();
 const assetsPath = path.join(import.meta.dirname, "public");
 app.use(express.static(assetsPath));
 
-app.disable("x-powered-by"); // deshabilitar el header X-Powered-By: Express
+app.disable("x-powered-by");
 
 app.use(express.urlencoded({ extended: true }));
 
 // settings
 app.set("view engine", "ejs");
-// app.set("views", path.join(__dirname, "views"));
 app.set("views", path.join(import.meta.dirname, "views"));
 
 // routes

@@ -7,16 +7,16 @@
 body {
   position: relative;
   min-height: 100vh;
-  background-color: aqua;
+  background: var(--color-background);
 }
 
 :root {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
-  background: var(--primary-color);
-  --primary-color: #f0edcf;
+  --color-background: #f0edcf;
   --secondary-color: hsl(209, 88%, 37%);
   --tertiary-color: hsla(201, 66%, 55%, 0.239);
+  --white-color: hsla(0, 0%, 100%, 0.61);
   --red-color-off: rgba(203, 19, 19, 0.816);
   --red-color-on: hsl(0, 100%, 50%);
 }
@@ -42,8 +42,8 @@ button {
 .card {
   display: grid;
   border-radius: 12px;
-  grid-template-rows: 30px 50px 45px;
-  background-color: var(--tertiary-color);
+  grid-template-rows: repeat(4, 1fr);
+  background-color: var(--white-color);
 }
 
 .card:hover {
@@ -60,35 +60,23 @@ button {
   font-size: calc(1em + 1vh);
 }
 
-.info-card {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  font-size: clamp(14px, calc(1em + 0.3vw), calc(1em + 0.8vw));
-  text-overflow: ellipsis;
-  overflow: hidden;
-  border-top: 2px solid var(--primary-color);
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom: 2px solid var(--primary-color);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: rgb(0 0 0 / 24%) 1px 0px 4px 0px;
-}
-
 .info-card-span {
   font-weight: 800;
+  padding: 3px 0 3px 0;
 }
 
 .author {
   font-size: x-large;
 }
+
 .text {
   display: flex;
   align-items: center;
 }
+
 .options-card {
-  grid-row-start: 4;
-  grid-row-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 6;
   display: flex;
   justify-content: end;
   gap: 12px;
@@ -100,7 +88,7 @@ button {
 .options-card button {
   display: inline-block;
   padding: 5px;
-
+  background-color: var(--secondary-color);
   border: none;
   color: white;
   border-radius: 5px;
@@ -111,28 +99,15 @@ button {
   height: 30px;
 }
 
-.options-card .btn-edit {
-  background-color: hsl(0deg 0% 1.57% / 76.86%);
+.options-card .btn-detail:active {
+  background: rgba(0, 0, 0, 0.35);
 }
-
-.options-card .btn-edit:active {
-  background: hsl(0, 0%, 2%);
-}
-
-.options-card .btn-delete {
-  background-color: var(--red-color-off);
-}
-
-.options-card .btn-delete:active {
-  background: var(--red-color-on);
-  color: #ddd;
-}
-
+ 
 .btn:hover,
 .btn-open:hover,
 .btn-reset:hover {
   transform: scale(0.925);
-}
+ }
 
 .btn-open {
   position: fixed;
@@ -148,20 +123,4 @@ button {
   text-decoration: none;
   width: 70px;
   height: 70px;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.hidden {
-  display: none;
 }

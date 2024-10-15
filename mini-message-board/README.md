@@ -1,5 +1,7 @@
 # Mini message board
 
+A basic Express app Express and EJS.
+
 ### TODO:
 
 https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board#project-solution
@@ -28,27 +30,28 @@ messages.push({ text: messageText, user: messageUser, added: new Date() });
 
 - [x] 9. At the end of the router.post() function use res.redirect("/") to send users back to the index page after submitting a new message.
 
-- [ ] 10. At this point, you should be able to visit /new (it might be a good idea to add a link to that route on your index page), fill out the form, submit it and then see it show up on the index page!
+- [x] 10. At this point, you should be able to visit /new (it might be a good idea to add a link to that route on your index page), fill out the form, submit it and then see it show up on the index page!
 
 - [x] 11. You’ll learn how to deploy your app to the web in the next lesson, don’t forget to come back and submit it to the submissions below once you’re done!
 
 - [x] 12. Push your project to GitHub.
 
-- [ ] add style in all pages
-- [ ] Explain the structure of project in README.md
+- [x] add style in all pages
+- [x] Explain the structure of project in README.md
 
 ### Tools
 
 - Express.js
 - ES Modules
 - EJS
+- node.js
 
 ### Run
 
 ```bash
 node --watch app.js
 ```
-
+or  
 ```bash
 npm start
 ```
@@ -59,14 +62,20 @@ tree -L 2 | grep -v -e "node\*":
 
 ```bash
 .
-├── models/
-│   └── message.js
-├── public/
-│   └── styles.css
-├── routes/
-│   └── index.mjs
-├── views/
-│    ├── pages/
-│    └── partials/
-└── app.js
+├── models/    # Structure of the data used
+│   └── message.js 
+├── public/    # Stores static files like images, CSS, and client-side scripts. These files are directly accessible from the browser.
+│   └── images/  
+├── routes/    # Contains the files that define the application's routes
+│   └── index.mjs
+├── views/    # Contains the application's templates that are rendered on the server side and sent to the client as HTML. In my case, I use EJS
+│    ├── pages/  # Full templates of the pages that will be rendered and displayed to the user
+│    └── partials/ # Contains reusable code fragments that can be included in other templates
+└── app.js # The entry point where the Express server starts and aspects like the port it listens on are defined.
+
 ```
+
+
+
+
+
