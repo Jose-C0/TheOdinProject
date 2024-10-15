@@ -1,9 +1,16 @@
 # Mini message board
 
-A basic Express app Express and EJS.  
+A basic Express app Express and EJS.
 
-Live in render: https://jose-c0-mini-message-board.onrender.com  
-Live in github: 
+Live in render: https://jose-c0-mini-message-board.onrender.com
+
+### Preview
+
+![](./imagesReadme/screen.jpg)
+
+![](./imagesReadme/screen2.jpg)
+
+![](./imagesReadme/screen3.jpg)
 
 ### Tools
 
@@ -17,7 +24,9 @@ Live in github:
 ```bash
 node --watch app.js
 ```
-or  
+
+or
+
 ```bash
 npm start
 ```
@@ -29,9 +38,9 @@ tree -L 2 | grep -v -e "node\*":
 ```bash
 .
 ├── models/    # Structure of the data used
-│   └── message.js 
+│   └── message.js
 ├── public/    # Stores static files like images, CSS, and client-side scripts. These files are directly accessible from the browser.
-│   └── images/  
+│   └── images/
 ├── routes/    # Contains the files that define the application's routes
 │   └── index.mjs
 ├── views/    # Contains the application's templates that are rendered on the server side and sent to the client as HTML. In my case, I use EJS
@@ -44,7 +53,3 @@ tree -L 2 | grep -v -e "node\*":
 ### TODO:
 
 https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board#project-solution
-
-
-
-
