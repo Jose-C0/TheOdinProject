@@ -9,11 +9,14 @@ Inspired by The Odin Project for the construction of the project I used:
 - HTML5 for the structure.
 - JavaScript.
 - Use of CSS3 grid and flex to align elements.
-- Metlify to deploy the page.
 - Maintain clean code practices
 
-### Preview
-![](./images/preview.png)
+### Preview in Desktop
+
+![](./images/preview.jpg)
+![](./images/preview2.jpg)
+![](./images/preview3.jpg)
 
 ### Live:
-https://jose-c0-admin-dashboard.netlify.app/
+
+https://jose-c0.github.io/TheOdinProject/homepage/index.html
