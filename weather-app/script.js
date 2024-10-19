@@ -58,7 +58,7 @@ function findCity() {
 findCity();
 
 async function main() {
-  citySelect.addEventListener("click", (e) => {
+  citySelect.addEventListener("change", (e) => {
     getWeather(citySelect.value);
   });
 }

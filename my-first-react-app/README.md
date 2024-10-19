@@ -12,3 +12,7 @@ Start the development server, alias: `vite dev`, `vite serve`:
 ```node.js
 npm run dev
 ```
+
+The output should look like this:
+
+![](./images/console.jpg)
