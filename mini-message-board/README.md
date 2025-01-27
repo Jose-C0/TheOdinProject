@@ -49,7 +49,3 @@ tree -L 2 | grep -v -e "node\*":
 └── app.js # The entry point where the Express server starts and aspects like the port it listens on are defined.
 
 ```
-
-### TODO:
-
-https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board#project-solution
