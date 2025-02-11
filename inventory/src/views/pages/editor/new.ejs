@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Item</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/partials/formNewItem.css" />
+    <!-- <link rel="stylesheet" href="css/pages/form.css" /> -->
+    <!-- <link rel="icon" type="image/x-icon" href="../images/message-icon.png"> -->
+</head>
+
+<body class="grid-index">
+    <header><%- include('../../partials/nav.ejs') %></header>
+    <main>
+        <div class="box-index">
+            <form class="form-new-item" name="form" method="POST" action="">
+                <h1>Let's do this</h1>
+                <div class="all-fields">
+                    <section class="form-up">
+                        <% db.map(nameOfField=> { %>
+                            <fieldset>
+                                <label for=<%=nameOfField %> > <%= nameOfField %> : </label>
+                                <input id=<%=nameOfField %> type="text" name=<%= nameOfField %>  />
+                            </fieldset>
+                        <% }) %>
+                    </section>
+                    <div class="final-form-pos">
+                        <button type="button" id="btn-cancel" onclick="location.href='<%= linkGoBack %>'">
+                            Cancel
+                        </button>
+                        <button type="submit" id="btn-send">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- include('../../partials/footer.ejs') %>
+        <script src='js/editForm.mjs'></script>
+</body>
+
+</html>

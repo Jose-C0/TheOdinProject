@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All user</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./form.css" />  
+    <!-- <link rel="icon" type="image/x-icon" href="../images/message-icon.png"> -->
+  </head>
+
+  <body>
+
+
+    <%- 
+    include("../partials/nav.ejs") %>
+    <div class="box-index">
+
+    <form class="form-all-users" name="form" method="POST" action="/delete">
+      <table>
+        <thead>
+          <tr>
+            <th> <input type="checkbox" name="checkname" class="selectall"> </th>  
+            <th>Id</th>  
+            <th>User name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% username.map(userObj => { %>
+          <tr>
+            <td>
+              <input id="<%= userObj.id %>" type="checkbox" name="checkname" class="check" value="<%= userObj.id %>"> 
+            </td>
+            <td><%= userObj.id %></td>
+            <td><%= userObj.username %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <button id="btn-alluser-delete" class="btn-send alluser">Delete</button>
+    
+    </form>
+  </div>
+    <script src="./formEdit.js"></script>
+  </body>
+</html>

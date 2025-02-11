@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/index.css" />
+</head>
+
+<body class="grid-index">
+  <header><%- include('../partials/nav.ejs') %></header>
+
+  <main>
+    <h1>Welcome to groceries inventory</h1>
+    <section class="section-summary">
+      <h2 class="title-sec-summary">Summary</h2>
+      <div class="container-cards">
+        <div class="card-info indx-produc-in">
+          <p>Total Products in Stock</p>
+          <p>
+            <%= tItemsIn %>
+          </p>
+        </div>
+        <div class="card-info indx-produc-out">
+          <p>Total Products Out Stock</p>
+          <p>
+            <%= tItemsOut %>
+          </p>
+        </div>
+
+        <div class="card-info indx-categories">
+          <p>Total Categories</p>
+          <p>
+            <%= tCat %>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-edit">
+      <h2 class="title-section-edit">Fast Actions</h2>
+      <ol class="list-action">
+        <li><a href="/table?tableName=categories">Edit Categories</a></li>
+        <li><a href="/table?tableName=products">Edit Products</a></li>
+        <li><a href="/table?tableName=suppliers">Edit Suppliers</a></li>
+        <li><a href="/table?tableName=users">Edit Users</a></li>
+        <li><a href="/table?tableName=inventorytransactions">Edit Inventory Transactions</a> </li>
+      </ol>
+
+
+    </section>
+
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
