@@ -9,7 +9,7 @@ This project consists in:
   
 <!-- TODO: ! -->
 
-- [ ] In the dockerfile create the database and insert tables and data, using postgreSQL. Don't forget to mention it in README.md
+- [x] In the dockerfile create the database and insert tables and data, using postgreSQL. Don't forget to mention it in README.md
 
 8. [ ] Deploy it and show off what you’ve done!
 

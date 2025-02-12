@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: elinventario-web
+    container_name: inventory-app
     build: .
     ports:
       - "1234:1234"

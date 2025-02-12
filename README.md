@@ -1,7 +1,7 @@
 ## Project lists
 [![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
 
-- [**odin-recipes**]( https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
+- [**homepage**]( https://jose-c0.github.io/TheOdinProject/homepage/index.html )
 
 - [**rock-paper-scissors**]( https://jose-c0.github.io/TheOdinProject/rock-papper-scissors/index.html)
 
@@ -16,3 +16,5 @@
 - [**project-library**]( https://jose-c0.github.io/TheOdinProject/project-library/index.html)
 
 - [**mini-message-board**]( https://jose-c0-mini-message-board.onrender.com )
+
+- [**odin-recipes**]( https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
