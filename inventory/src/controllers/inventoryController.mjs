@@ -94,7 +94,7 @@ async function postViewEditItem (req, res) {
   await db.queryUpdateItem(bodyRequest, queryRequest);
 
   // eslint-disable-next-line quotes
-  res.redirect(`pages/table${linkGoBack}`);
+  res.redirect(`/table${linkGoBack}`);
 }
 
 async function getViewcreate (req, res) {

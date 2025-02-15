@@ -44,15 +44,16 @@ Execute the following commands in the path where compose.yml is located
  
 To run this project, you will need to add the following environment variables to your .env file
 
-> HOSTS_DB="postgres_server"
-> USER_DB="j"
-> DATABASE="inventorydb"
-> PASSWORD="secreto"
-> PORT_DB="5432"
-> IP_NODE_SERVER="localhost"
-
+> HOSTS_DB="postgres_server"  
+> USER_DB="USER-DB"  
+> DATABASE="NAME-OF-DB"  
+> PASSWORD="PASSWORD"  
+> PORT_DB="5432"  
+> IP_NODE_SERVER="localhost"  
 
 ## Dockerfile on folder scirpts/  
+
+This is what the Dockerfile in the scripts/ folder does:
 
 1. Copy the scripts to the postgres server.
 
@@ -62,20 +63,17 @@ To run this project, you will need to add the following environment variables to
 psql -h localhost -p 5432  -U odin -d inventorydb -c '\dt' 2> /scrips/error.txt
 ```  
 
--c '\dt' # comando psql para determinar si existen tablas.  
-
 3. The DB is created IN CASE THE DB DOESN'T EXIST 
 
 ```bash 
 psql -h localhost -p 5432  -U odin -d inventorydb -f $sqlScript
 ```  
 
-–h # is host name
--p # is port number
--d # is database name
--U # is for user name
--f # path to script sql
-
+–h # is host name  
+-p # is port number  
+-d # is database name  
+-U # is for user name  
+-f # path to script sql  
 
 ## Docker commands
 
@@ -90,8 +88,6 @@ psql -h localhost -p 5432  -U odin -d inventorydb -f $sqlScript
 | docker start NAME-OF-CONTAINER |
 | docker stop NAME-OF-CONTAINER |
 | docker compose ps | # Shows the status of all containers running|
-| | docker compose ps | # Shows the status of all containers running| | #  To execute the psql command inside a Docker container |  
-
 
 #### docker compose up paramerts explain
 
