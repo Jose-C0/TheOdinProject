@@ -1,17 +1,18 @@
 # Inventory management
 
-Inventory management app for an managing groceries.
+Inventory management app for an managing groceries. 
+
+Live in render: https://invetory-web.onrender.com/
 
 This project consists in:  
 
-- Setting up a db in PostgreSQL.  
+- Setting up a db in PostgreSQL.
 - Setting up and querying with node-postgres.
-  
+- setting up docker compose.
+- Deploy on render.
+- Supabase to handle database operations
+
 <!-- TODO: ! -->
-
-- [x] In the dockerfile create the database and insert tables and data, using postgreSQL. Don't forget to mention it in README.md
-
-8. [ ] Deploy it and show off what you’ve done!
 
 - [ ] Form validation, fix code
 
@@ -24,18 +25,81 @@ This project consists in:
 - PostgreSQL
 - Docker Compose
 - HTML, CSS, JavaScript
-- Semistandard
-[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
+- Semistandard  
+
+## Screenshots
 
 ## Requirements
+
 1. Install dependendencies. (npm install)
+2. [Set up environment Variables.](#environment-variables)
+3. [Run project using Docker Compose](#Docker-Compose)
 
-2. [Set up db with Docker Compose](#Set-up-db-whit-Docker-Compose)
 
-3. Create datebase and insert data ([psql](#create-database-and-insert-data-with-psql)
- or [via script](#create-database-and-insert-data-with-javascript))  
+## Run project using Docker Compose
 
-4. [Set up environment Variables.](#environment-variables)
+Execute the following commands in the path where compose.yml is located  
+
+## Environment Variables
+ 
+To run this project, you will need to add the following environment variables to your .env file
+
+> HOSTS_DB="postgres_server"
+> USER_DB="j"
+> DATABASE="inventorydb"
+> PASSWORD="secreto"
+> PORT_DB="5432"
+> IP_NODE_SERVER="localhost"
+
+
+## Dockerfile on folder scirpts/  
+
+1. Copy the scripts to the postgres server.
+
+2. dbIsEmpty.sh - Check if the database has created tables. 
+
+```bash 
+psql -h localhost -p 5432  -U odin -d inventorydb -c '\dt' 2> /scrips/error.txt
+```  
+
+-c '\dt' # comando psql para determinar si existen tablas.  
+
+3. The DB is created IN CASE THE DB DOESN'T EXIST 
+
+```bash 
+psql -h localhost -p 5432  -U odin -d inventorydb -f $sqlScript
+```  
+
+–h # is host name
+-p # is port number
+-d # is database name
+-U # is for user name
+-f # path to script sql
+
+
+## Docker commands
+
+| Commands | Comment |
+| ------ | ------ |
+| docker compose up --watch |  # Create and start containers. Is used to monitor specified file or directory paths on the host machine and automatically update running Docker Compose services when changes are detected. |
+| docker compose up --build -d| # builds or re-builds the Docker images for your services and then runs them in detached mode, meaning the containers will run in the background |   
+| docker compose up -d |  # Create and start containers ( postgreSQL and adminer inventor-app) |
+| docker compose down |   # Stop and remove containers, networks |
+| docker compose start |
+| docker compose stop |
+| docker start NAME-OF-CONTAINER |
+| docker stop NAME-OF-CONTAINER |
+| docker compose ps | # Shows the status of all containers running|
+| | docker compose ps | # Shows the status of all containers running| | #  To execute the psql command inside a Docker container |  
+
+
+#### docker compose up paramerts explain
+
+| Parameter | Description |
+| ------ | ------ |
+| --watch |  Is a feature that allows developers to monitor specified files or directories for changes and automatically update running Docker Compose services based on those changes.|
+| --build | The docker-compose --build option is used to rebuild Docker images when you run docker-compose up. This ensures that any changes made to the Dockerfile or the build context are applied. |
+| -d      | The docker compose up --detach command starts the containers in the background and leaves them running. This allows you to exit the terminal without stopping the containers. |  
  
 
 ## Run Locally
@@ -43,112 +107,22 @@ This project consists in:
 Start the server
 
 ```bash
-  npm run start
+  npm start
 ```  
 
-Execute the following commands in the path where compose.yml is located  
-
-```bash
-docker start NAME-OF-CONTAINER
-docker stop NAME-OF-CONTAINER
-docker compose start
-docker compose stop
-docker compose ps     # Shows the status of all containers
-docker compose up --watch # Create and start containers ( postgreSQL and adminer inventor-app)  
-docker compose up --build -d # Create and start containers ( postgreSQL and adminer inventor-app)  
-docker compose up -d  # Create and start containers ( postgreSQL and adminer inventor-app)  
-docker compose down   # Stop and remove containers, networks
-```
 
 ## Set up db whit Docker Compose 
 
 You will need to add the following variables to your compose.yml file:
 
-```yml
-services:  
-
-```
-
-## Create database and insert data with psql  
-
-if you are running a docker container the following command helps you to enter the container:  
-
-```bash
-docker exec -it db-postgres_server-1 psql -h localhost -U NAMEUSER -d odin
-```
-
-Enter the PostgreSQL shell by running psql
-\l - you can view the current dbs  
-
-```bash
-CREATE DATABASE top_users;
-```
-
-\l again to see if the db was created. Now let’s connect to the db:
-
-```bash
-\c top_users
-```
-
-Verify that the psql prompt should be:  
-
-```bash
-top_users=#
-```
-
-Now create a table and its columns to store username data:  
-
-```sql
-CREATE TABLE usernames (
-   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-   username VARCHAR ( 255 )
-);
-```
-
-Verify that the table has been created by running \d
-
-```sql
-INSERT INTO usernames (username)
-VALUES ('Mao'), ('nevz'), ('Lofty');
-```
-
-## Create Database and insert data with JavaScript
-
-You can then run this script via node db/populatedb.js
-
-```javascript
-node db/populatedb.js
-```
-or add it as a script in package.json and run:
-
-```bash
-npm run populatedb
-```
-
-## Environment Variables
  
-To run this project, you will need to add the following environment variables to your .env file
-
-> HOSTS=IP  
-> USER_DB="username"  
-> DATABASE="top_users"  
-> PASSWORD=""  
-> PORT=Number_of_port  
-
 
 ## Screenshots
 
-<img src="images/listofusers.jpg" width="800"  height=300>  
-
-<img src="images/newuser.jpg" width="800"  height=300>
-
-### PostgreSQL comands
  
-### Project structure  
-
-.
-
 ## Semistandard  
+
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)  
 
 Semistandard is the JavaScript Standard Style on this project
 
