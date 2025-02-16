@@ -2,15 +2,17 @@
 sqlScript=inventorydb.sql
 pathError=error.txt
 
-psql -h localhost -p 5432  -U odin -d inventorydb -c '\dt' 2> /scrips/error.txt
+psql -h localhost -p $POSTGRES_SERVER_PORT  -U $POSTGRES_USER  -d $POSTGRES_DB  -c '\dt' 2> /scrips/error.txt
 
 # echo $?
 if [ $(wc -l < $pathError) -eq 0  ]
 then
-  echo 'simplemente no hace hay datos en la bd, y el arhchivo $pathError no va a ser escrito conh el error'
+  echo 'there is simply no data in the database, and the file $pathError is not going to be written with the error'
   cat $pathError
 else
-  mkdir noerror
-  echo 'ejecuta el scriptSql porque al archivo $pathError fue redirigido el error '
-  psql -h localhost -p 5432  -U odin -d inventorydb -f $sqlScript
+  echo 'run the scriptSql because the $pathError file was redirected to the error' 
+  psql -h localhost -p $POSTGRES_SERVER_PORT  -U $POSTGRES_USER  -d $POSTGRES_DB  -f $sqlScript
 fi
+
+  
+
