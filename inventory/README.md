@@ -36,10 +36,6 @@ This project consists in:
 3. [Run project using Docker Compose](#Docker-Compose)
 
 
-## Run project using Docker Compose
-
-Execute the following commands in the path where compose.yml is located  
-
 ## Environment Variables
  
 To run this project, you will need to add the following environment variables to your .env file
@@ -50,6 +46,16 @@ To run this project, you will need to add the following environment variables to
 > PASSWORD="PASSWORD"  
 > PORT_DB="5432"  
 > IP_NODE_SERVER="localhost"  
+
+## Run project using Docker Compose
+
+Execute the following commands in the path where compose.yml is located  
+
+```bash
+docker compose up --watch  # Create and start containers.
+docker compose stop  # Stop services
+```
+
 
 ## Dockerfile on folder scirpts/  
 
