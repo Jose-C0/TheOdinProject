@@ -1,10 +1,6 @@
 const path = require("node:path");
 const express = require("express");
-/*
-const pool = require("./db/pool.js");
-const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcrypt");
-*/
+
 const session = require("express-session");
 const passport = require("passport");
 
@@ -16,8 +12,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
-/*
-*/
+
 app.use(session({ secret: "cats", resave: false, saveUninitialized: false }));
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
