@@ -1,0 +1,66 @@
+services:
+  app:
+    container_name: nodejs-authentication-basics
+    build: .
+    env_file:
+      - path: ./.env
+    ports:
+      - "${PORT_NODE_SERVER}:1234"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+    depends_on:
+      - postgres_server_test_odin
+    networks:
+      - inventory-app-network
+      - adminer-network
+  
+  postgres_server_test_odin:
+    container_name: postgres_server_test_odin
+    # image: postgres:17.1 
+    build: ./scripts/
+    healthcheck:
+      test: ["CMD", "bash", "-c", "./dbIsEmpty.sh"]
+      start_period: 10s
+    env_file:
+      - path: ./.env
+    environment:
+      # POSTGRES_HOST_AUTH_METHOD: ${HOSTS_DB}
+      POSTGRES_SERVER_PORT: ${PORT_DB}
+      POSTGRES_USER: ${USER_DB}
+      POSTGRES_PASSWORD: ${PASSWORD_DB}
+      POSTGRES_DB: ${DATABASE_DB}
+    ports:
+      - ${PORT_DB}:${PORT_DB}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - adminer-network
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres_server_test_odin
+    depends_on:
+      - postgres_server_test_odin
+    networks:
+      - adminer-network
+
+volumes:
+  postgres-data:
+
+networks:
+  adminer-network:
+    name: db_adminer-network
+  inventory-app-network:
+ 
+
+ 
