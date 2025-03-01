@@ -5,28 +5,26 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Members Only</title>
   <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/structure.css" />
   <link rel="stylesheet" href="css/pages/index.css" />
 </head>
 
-<body>
-  <%# if (locals.user) {%>
-    <h1>WELCOME BACK <%= locals.user.username  %>
-    </h1>
-    <a href="/log-out">LOG OUT</a>
-    <%# } else { %>
-    <!-- 
-      <h1>please log in</h1>
-      <form action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input id="username" name="username" placeholder="username" type="text" />
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" />
-        <button>Log In</button>
-      </form>
-      -->
-      <%#}%>
+<body class="grid-index">
+  <header>
+    <%- include("../partials/nav.ejs") %>
+  </header>
+  <main>
+    <section></section>
+    <% if (locals.user) {%> 
+      <p> Hay un usuario</p>      
+      <% } %>
+  </main>
+  <%# else { %>
+    <!--   -->
+    <%#}%>
+      <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>
