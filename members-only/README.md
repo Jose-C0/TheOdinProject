@@ -1,6 +1,6 @@
 # mo member-only
 
-Nota: En esta version puedes hacer la accion de login, signup
+Nota: Cambio en el css de index.ejs, bd terminada
 
 <!-- TODO: -->
 [x] ver si puedo usar esmoduleJS
@@ -8,9 +8,12 @@ Nota: En esta version puedes hacer la accion de login, signup
 [x] mover la logica de app.js a las demas capetas
 [x] crear MVC
 [x] crear carpetas rutas 
-[ ] crerar DB (relaciones, datos, esquema...)
+[x] crerar DB (relaciones, datos, esquema...)
 [ ] pasos TheOdinProject
 [ ] editar estilos 
-[ ] instalar dependencia dotenv
-[ ] ver si uso esmodulesjs o commonjs
+[x] instalar dependencia dotenv
+[x] ver si uso esmodulesjs o commonjs
+[ ] crear new message (vista, controlador, consulta)
+
+
 

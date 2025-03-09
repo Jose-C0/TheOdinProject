@@ -5,11 +5,11 @@ const bcrypt = require("bcrypt");
 // const LocalStrategy = require("passport-local").Strategy;
 // const passport = require("passport");
 
-async function getSignupForm(req, res) {
+async function get(req, res) {
   if (req.isUnauthenticated()) {
-    res.render("pages/sign-up-form");
-  } else {
     res.redirect("/");
+  } else {
+    res.render("pages/new-msg");
   }
 }
 
@@ -28,7 +28,7 @@ async function create(req, res, next) {
 
     // AUTHENTICATE
 
-    res.redirect("/log-in");
+    res.redirect("/");
   } catch (error) {
     console.error(error);
     next(error);

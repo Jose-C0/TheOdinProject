@@ -1,0 +1,78 @@
+
+.container-msg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 12px;
+  padding: 1px 10px 12px 10px;
+}
+
+.card {
+  display: grid;
+  border-radius: 12px;
+  grid-template-rows: repeat(2, 1fr);
+  /* background-color: var(--white-color); */
+  padding: 4px 4px 4px 4px;
+  border: 1px solid var(--white-color);
+}
+
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.01);
+}
+
+.title {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  line-height: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: calc(1em + 1vh);
+}
+
+.info-card-span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 3px 0 3px 0;
+}
+
+.author {
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+.options-card {
+  grid-row-start: 6;
+  grid-row-end: 6;
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  align-items: center;
+}
+
+.options-card button {
+  display: inline-block;
+  padding: 5px;
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: calc(1em - 2px);
+  font-weight: 700;
+  width: 75px;
+  height: 30px;
+}
+
+.options-card .btn-detail:active {
+  background: rgba(0, 0, 0, 0.35);
+}
