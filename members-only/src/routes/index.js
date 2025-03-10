@@ -25,7 +25,7 @@ router.post(
   "/log-in",
   loginInController.passportLocalStrategy.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/",
+    failureRedirect: "/log-in",
   })
 );
 

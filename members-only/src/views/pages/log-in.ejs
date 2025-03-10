@@ -5,46 +5,39 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Login</title>
   <link rel="stylesheet" href="css/base.css" />
-  <!-- <link rel="stylesheet" href="css/pages/index.css" /> -->
+  <link rel="stylesheet" href="css/pages/log-in.css" />  
 </head>
 
 <body>
-  <header>
-    <%# - include('../partials/nav.ejs') %>
-  </header>
-  <main>
-    <h1>please log in</h1>
-    <form action="/log-in" method="POST">
-      <label for="username">Username</label>
-      <input id="username" name="username" placeholder="username" type="text" />
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" />
-      <button>Log In</button>
-    </form>
-    <!--  
-        <div id="container">
-            <form class="form-area" name="form" method="POST" action="">
-                <h1>Create user</h1>
-                <div class="all-fields">
-                    <section class="form-up">
-                        <label for="messageUser">User Name </label>
-                        <input id="username" type="text" name="username" required />
-                    </section>
-                    <div class="final-form-pos">
-                        <button type="button" class="btn-cancel" onclick="location.href='/'">
-                            Cancel
-                        </button>
-                        <button class="btn-send">Send</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        -->
-  </main>
+  <div class="container">
+    <div class="login-card">
 
-  <%# - include('../partials/footer.ejs') %>
+      <h1 class="title">Log In</h1>
+
+      <form action="/log-in" method="POST">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" placeholder="username" type="text" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" placeholder="password" type="password" required />
+        </div>
+        <div class="btn-form">
+          <button class="btn" type="submit">Log In</button>
+        </div>
+        <div class="or">or</div>
+        <div class="sign-up-link">
+          <p>Are You New? <a href="/sign-up">Create Account</a></p>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
 </body>
 
 </html>
