@@ -1,17 +1,21 @@
 /* General */
-.title-sec-summary, .title-section-edit {
+.title-sec-summary,
+.title-section-edit {
   font-size: 1.8rem;
 }
 
 /* MAIN */
 main {
-
   padding: 10px 4vw 3vw 4vw;
 }
 
-
 /* SECTION-SUMMARY */
+.title{
+  font-size: calc(1em + 1vw);
+  margin: 10px 5px;
+  padding: 10px 5px;
 
+}
 .section-summary {
   display: flex;
   flex-direction: column;
@@ -41,7 +45,6 @@ main {
   border-radius: 10px;
   border: 1px solid var(--white-color);
   font-size: 1.4rem;
-  
 }
 /* SECTION-EDIT */
 .list-action {
@@ -63,15 +66,12 @@ main {
   transform: scale(1.09);
 }
 
-
-
-.list-action  a {
+.list-action a {
   font-size: 1.5rem;
   color: var(--secondary-color);
 }
 
-.list-action  a:hover {
+.list-action a:hover {
   font-size: 1.5rem;
   color: var(--secondary-color);
 }
-

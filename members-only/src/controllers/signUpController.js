@@ -23,6 +23,7 @@ async function create(req, res, next) {
         hashedPassword,
         req.body.first_name,
         req.body.last_name,
+        
       ]
     );
 

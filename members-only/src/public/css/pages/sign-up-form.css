@@ -4,16 +4,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* align-items: center; */
 }
 
 /* IMG LEFT */
 .photo-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 40%;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  position: relative;
 }
 
 img {
@@ -44,7 +43,7 @@ img {
   width: 100%;
   background-color: rgb(0 0 0 / 40%);
   color: #ffffff;
-  
+  font-size: 4rem;
 }
 
 .text-logo {
@@ -52,14 +51,11 @@ img {
   align-items: center;
   justify-items: center;
   justify-content: center;
-
-  font-size: 2rem;
-  color: #ffffff;
-
+  font-size: calc(1rem + 1vw);
+  color: var(--text-white);
   position: absolute;
   bottom: 2rem;
   width: 100%;
-
 }
 
 .text-info {
@@ -68,64 +64,53 @@ img {
 }
 
 .text-logo a {
-  color: #ffffff;
+  color: var(--text-white);
 }
 
-
 /* FORM */
+
+.title {
+  margin: 10px 0 10px 0;
+  color: var(--text-white);
+  font-size: 16px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
+  height: 100%;
   width: 70%;
+  overflow: auto;
 }
 
 .up {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: auto;
-  font-size: 2rem;
-  height: 30%;
-  gap: 5rem;
-  padding-left: 2vw; */
-
 }
-
 
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  /* width: auto;
-  height: 70%;
-  font-size: 2rem; */
-
+  height: auto;
 }
 
 form#form-area {
   display: flex;
   flex-direction: column;
-  /* width: 100%;
-  height: 40vh;
-  background: rgb(255, 255, 255);
-  
-  justify-content: flex-start;
-  padding-left: 2vw;
-  box-shadow: 20px 0px 11px 5px hsla(0, 0%, 0%, 0.503) */
-}
-
-.title {
-  font-size: 40px;
-  text-align: center;
-  color: var(--text-white);
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  background: var(--primary-color);
+  box-shadow: 0px 0px 20px rgb(0 0 0);
 }
 
 .input-group {
   margin-bottom: 16px;
-  width: 420px;
+  width: 50vw;
 }
 
 .input-group label {
@@ -138,13 +123,12 @@ form#form-area {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-family: "Roboto", sans-serif;
 }
-
 
 .btn-form {
   display: flex;
   align-items: center;
+  width: 50vw;
   justify-content: flex-end;
 }
 
@@ -156,7 +140,7 @@ form#form-area {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: 0.3s ease, transform 0.3s ease;
 }
 
 .btn-form .btn:hover {
@@ -164,9 +148,14 @@ form#form-area {
   transform: scale(1.05);
 }
 
+#signin:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .or {
   text-align: center;
-  margin: 20px 0;
+  margin: 10px 0;
   font-size: 14px;
   color: #999;
 }
@@ -175,7 +164,6 @@ form#form-area {
   font-size: 12px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 20px;
 }
 
 .login-link a {
@@ -184,93 +172,25 @@ form#form-area {
 
 .login-link a:hover {
   color: var(--red-color-on);
-} 
-
-/* TODO:  INICIO
-form#form-area h1 {
-  font-size: 3rem;
 }
 
-label {
-  padding-top: 15px;
-}
-
-input,
-textarea {
-  padding: 12px;
-  border-radius: 4px;
-  resize: vertical;
-
-  font-size: 2rem;
-  width: auto;
-  height: 4vh;
-  box-sizing: border-box;
- 
-}
-
-.form-left,
-.form-right {
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-}
-
-
-.all-fields {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 40px;
-}
-
-#signin {
-  TODO: COMENTAR button 
-  background-color: #596D48;
-  width: 12vw;
-  height: 9vh;
-  margin-bottom: 5px;
-  color: #ffffff;
-  border-radius: 8px;
-  transition-duration: 0.4s;
-  border: none;
-  font-size: 2rem;
-}
-
-#signin:hover {
-  TODO: COMENTAR  button
-  background-color: rgb(0, 255, 89);
-  color: white;
-}
-
-#signin:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-.final-form-pos {
-  position: absolute;
-  bottom: 52px;
-}
-
-.form-final-sec {
-  position: absolute;
-  top: 75vh;
-  font-size: calc(2rem - 6px);
-}
-
- 
-
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-TODO: FIN */
 .requirement {
-  font-size: 1rem;
-  color: red;
-  font-family: 'Times New Roman', Times, serif;
-}
+  font-size: calc(.1em + 1vw);
+  color: var(--red-color-on);
+ }
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 700px), (max-height: 550px) {
+  .photo-container {
+    display: none;
+  }
+
+  .form-container {
+    width: 100%;
+    overflow: auto;
+    height: fit-content;
+  }
 }

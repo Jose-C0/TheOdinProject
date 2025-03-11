@@ -6,15 +6,10 @@ async function getIndex(req, res) {
   if (req.isUnauthenticated()) {
     res.render("pages/index.ejs", { messages });
   } else {
+    console.log(req)
     res.render("pages/index.ejs", { user: req.user, messages });
   }
 
-  // res.render("pages/index.ejs", { messages });
-  //  res.render("pages/index.ejs", { user: req.user });
-
-  // console.log(req.isUnauthenticated());
-  // res.render("index.ejs", { user: req.user });
-  //  console.log(req.isAuthenticated());
 }
 
 module.exports = { getIndex };
