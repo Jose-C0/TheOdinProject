@@ -1,13 +1,9 @@
 const pool = require("../db/pool.js");
 const bcrypt = require("bcrypt");
-// const passportLocalStrategy = require("../middleware/passportLocalStrategy.js");
-// const loginInController = require("../controllers/logInController.js");
-// const LocalStrategy = require("passport-local").Strategy;
-// const passport = require("passport");
 
 async function getSignupForm(req, res) {
   if (req.isUnauthenticated()) {
-    res.render("pages/sign-up-form");
+    res.render("pages/sign-up-form.ejs");
   } else {
     res.redirect("/");
   }
@@ -26,9 +22,7 @@ async function create(req, res, next) {
         
       ]
     );
-
     // AUTHENTICATE
-
     res.redirect("/log-in");
   } catch (error) {
     console.error(error);

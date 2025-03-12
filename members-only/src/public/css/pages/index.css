@@ -10,11 +10,13 @@ main {
 }
 
 /* SECTION-SUMMARY */
-.title{
+.title {
   font-size: calc(1em + 1vw);
   margin: 10px 5px;
   padding: 10px 5px;
-
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
 }
 .section-summary {
   display: flex;

@@ -59,7 +59,9 @@ nav .right-links /*a*/ {
 
 }
 
-nav .left-links /* a */ {
+nav .left-links {
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   color: var(--white-color);
 
@@ -69,6 +71,15 @@ nav .left-links /* a */ {
   box-shadow: var(--tertiary-color) 0px 0px 0px 13px;
   background: var(--tertiary-color);
 }
+
+.img-odin {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-position: top center;
+    height: auto;
+    /* max-width: 2vw; */
+    width: 30px;
+} 
 /* FOOTER */
 
 footer {

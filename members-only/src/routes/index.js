@@ -1,16 +1,14 @@
 const express = require("express");
 
-// const pool = require("../db/pool.js");
-// const session = require("express-session");
-//  const passport = require("passport");
-//  const LocalStrategy = require("passport-local").Strategy;
-// const bcrypt = require("bcrypt");
-// const passport = require("../controllers/logInController.js");
 const indexController = require("../controllers/indexController.js");
 const loginInController = require("../controllers/logInController.js");
 const logOutController = require("../controllers/logOutController.js");
-
+const memberJoinController = require("../controllers/memberJoinController.js");
 const signUpController = require("../controllers/signUpController.js");
+const createMsgController = require("../controllers/createMsgController.js");
+
+const middlewareSignUpValidation = require("../middleware/validation/signUpValidation.js");
+const middlewareCreateMsgValidation = require("../middleware/validation/createMsgValidation.js");
 
 const router = express.Router();
 
@@ -18,8 +16,15 @@ router.get("/", indexController.getIndex);
 router.get("/log-in", loginInController.getLoginForm);
 router.get("/sign-up", signUpController.getSignupForm);
 router.get("/log-out", logOutController.getLogout);
+router.get("/member-join", memberJoinController.getMemberJoinForm);
+router.get("/create-msg", createMsgController.getCreateMsgForm );
 
-router.post("/sign-up", signUpController.create);
+
+router.post(
+  "/sign-up",
+  middlewareSignUpValidation.validateUser(),
+  signUpController.create
+);
 
 router.post(
   "/log-in",
@@ -28,6 +33,10 @@ router.post(
     failureRedirect: "/log-in",
   })
 );
+
+router.post("/member-join", memberJoinController.confirmSecretAccess);
+
+router.post("/create-msg", middlewareCreateMsgValidation.validateMsg(), createMsgController.create);
 
 router.all("*", (req, res) => {
   if (req.isAuthenticated()) {
