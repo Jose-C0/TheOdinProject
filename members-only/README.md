@@ -14,17 +14,22 @@ This project consists in:
 
 ## Tools
 
-- Docker Compose  
-- node.js  
-- Express.js  
-- Template engine: EJS  
-- Passport.js ([Strategy Username & Password](https://www.passportjs.org/howtos/password/)  )
-- express-validator  
-- PostgreSQL  
-- HTML, CSS, JavaScript  
-- Semistandard  
+- Docker Compose
+- node.js
+- Express.js
+- Template engine: EJS
+- Passport.js ([Strategy Username & Password](https://www.passportjs.org/howtos/password/) )
+- express-validator
+- PostgreSQL
+- HTML, CSS, JavaScript
+- Semistandard
 
 ## Screenshots
+
+<img src="./img/homeiPhoneSE.png" alt="home iPhoneSE" width="200" height="400">
+<img src="./img/homeDesktop.png" alt="home Desktop" width="420" height="320">
+<img src="./img/signup.png" alt="signup" width="420" height="300">
+
 
 ## Requirements
 
@@ -33,7 +38,7 @@ This project consists in:
 3. Install dependendencies. (npm install).
 4. [Set up environment Variables. ](#environment-variables)
 
-Finally [Run project using Docker Compose ](#Run-project-using-Docker-Compose)
+Finally [Run project using Docker Compose ](#run-project-using-docker-compose)
 
 ## Environment Variables
 
@@ -50,46 +55,47 @@ To run this project, you will need to add the following environment variables to
 
 ## Run project using Docker Compose
 
-Execute the following commands in the path where compose.yml is located  
+Execute the following commands in the path where compose.yml is located
 
 ```bash
-docker compose up --watch  # Create and start containers.  
-docker compose stop  # Stop services  
+docker compose up --watch  # Create and start containers.
+docker compose stop  # Stop services
 ```
 
-To see more information about [docker commands.](./README.Docker.md)  
+To see more information about [docker commands.](./README.Docker.md)
 
-## Dockerfile on folder scirpts/  
+## Dockerfile on folder scirpts/
 
 This is what the Dockerfile in the scripts/ folder does:
 
-1. Copy the scripts to the postgres server.  
-2. dbIsEmpty.sh - Check if the database has created tables.  
+1. Copy the scripts to the postgres server.
+2. dbIsEmpty.sh - Check if the database has created tables.
 
-```bash 
+```bash
 psql -h localhost -p 5432  -U odin -d inventorydb -c '\dt' 2> /scrips/error.txt
-```   
+```
 
-3. The DB is created IN CASE THE DB DOESN'T EXIST  
+3. The DB is created IN CASE THE DB DOESN'T EXIST
 
-```bash 
+```bash
 psql -h localhost -p 5432  -U odin -d inventorydb -f $sqlScript
-```  
+```
 
 –h # is host name  
 -p # is port number  
 -d # is database name  
 -U # is for user name  
--f # path to script sql  
+-f # path to script sql
 
-## Semistandard  
+## Semistandard
 
-[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)  
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 Semistandard is the JavaScript Standard Style on this project
 
-```bash 
+```bash
 npm run formatter # Fix most issues automatically of formatter
 
-semistandard --fix "src/controllers/*.mjs" # You can optionally pass in a directory (or directories) using the glob pattern. 
- 
+semistandard --fix "src/controllers/*.mjs" # You can optionally pass in a directory (or directories) using the glob pattern.
+
+```
