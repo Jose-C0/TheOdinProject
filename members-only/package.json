@@ -9,7 +9,7 @@
   "description": "",
   "scripts": {
     "start": "nodemon src/app.js",
-    "deploy": "node src/app.mjs",
+    "deploy": "node src/app.js",
     "formatter": "semistandard --fix"
   },
   "dependencies": {
