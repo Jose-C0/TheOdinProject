@@ -23,7 +23,6 @@ This project consists in:
 - HTML, CSS, JavaScript
 - Semistandard  
 
-## Screenshots
 
 ## Requirements
 
@@ -87,12 +86,7 @@ Start the server
 ```  
 
 
-## Set up db whit Docker Compose 
- 
 
-## Screenshots
-
- 
 ## Semistandard  
 
 [![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)  
