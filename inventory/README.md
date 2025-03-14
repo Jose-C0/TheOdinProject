@@ -12,10 +12,6 @@ This project consists in:
 - Deploy on render.
 - Supabase to handle database operations
 
-<!-- TODO: ! -->
-
-- [ ] Form validation, fix code
-
 ## Tools
 
 - Express.js
