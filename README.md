@@ -18,3 +18,8 @@
 - [**mini-message-board**]( https://jose-c0-mini-message-board.onrender.com )
 
 - [**odin-recipes**]( https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
+
+- [**inventory**]( https://invetory-web.onrender.com )
+  
+- [**member-only**]( https://members-only-wu4a.onrender.com )
+ 
