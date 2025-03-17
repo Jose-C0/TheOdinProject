@@ -1,25 +1,24 @@
 ## Project lists
-[![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
 
-- [**homepage**]( https://jose-c0.github.io/TheOdinProject/homepage/index.html )
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit)
 
-- [**rock-paper-scissors**]( https://jose-c0.github.io/TheOdinProject/rock-papper-scissors/index.html)
+- [**homepage**](https://jose-c0.github.io/TheOdinProject/homepage/index.html)
 
-- [**etch-a-sketch**]( https://jose-c0.github.io/TheOdinProject/Etch-a-Sketch/index.html)
+- [**rock-paper-scissors**](https://jose-c0.github.io/TheOdinProject/rock-papper-scissors/index.html)
 
-- [**calculator**]( https://jose-c0.github.io/TheOdinProject/calculator/index.html)
+- [**etch-a-sketch**](https://jose-c0.github.io/TheOdinProject/Etch-a-Sketch/index.html)
 
-- [**sign up**]( https://jose-c0.github.io/TheOdinProject/sign-up/index.html)
+- [**calculator**](https://jose-c0.github.io/TheOdinProject/calculator/index.html)
 
-- [**admin-dashboard**]( https://jose-c0.github.io/TheOdinProject/admin-dashboard/index.html)
+- [**sign up**](https://jose-c0.github.io/TheOdinProject/sign-up/index.html)
 
-- [**project-library**]( https://jose-c0.github.io/TheOdinProject/project-library/index.html)
+- [**admin-dashboard**](https://jose-c0.github.io/TheOdinProject/admin-dashboard/index.html)
 
-- [**mini-message-board**]( https://jose-c0-mini-message-board.onrender.com )
+- [**project-library**](https://jose-c0.github.io/TheOdinProject/project-library/index.html)
 
-- [**odin-recipes**]( https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
+- [**mini-message-board**](https://jose-c0-mini-message-board.onrender.com)
 
-- [**inventory**]( https://invetory-web.onrender.com )
-  
-- [**member-only**]( https://members-only-wu4a.onrender.com )
- 
+- [**odin-recipes**](https://jose-c0.github.io/TheOdinProject/odin-recipes/index.html)
+
+- [**inventory**](https://invetory-web.onrender.com)
+- [**member-only**](https://members-only-wu4a.onrender.com)
