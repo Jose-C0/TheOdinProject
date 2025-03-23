@@ -1,7 +1,5 @@
 # About Project
 
-[![The Unlicense](https://upload.wikimedia.org/wikipedia/commons/e/ee/Unlicense_Blue_Badge.svg)](https://choosealicense.com/licenses/unlicense/)
-
 The project consists of creating a web page with a grid of 16 x 16 square divs.
 
 Inspired by The Odin Project for the construction of the project I used:
