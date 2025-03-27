@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/sign-up-form.css" />
+
+</head>
+
+<body>
+  <div id="container">
+
+    <div class="photo-container">
+      <div class="logo">
+        <img class="img-odin"
+          src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+          alt="odin">
+        <p>Members Only</p>
+      </div>
+      <div class="text-logo">
+        <p>Photo by
+          <a href="https://unsplash.com/es/fotos/planta-de-hoja-verde-en-fotografia-de-primer-plano-25xggax4bSA">
+            Halie West
+          </a>
+          on
+          <a href="https://unsplash.com/es/fotos/planta-de-hoja-verde-en-fotografia-de-primer-plano-25xggax4bSA">
+            Unsplash
+          </a>
+        </p>
+      </div>
+
+      <img src="images/halie-west-25xggax4bSA-unsplash.jpg" alt="img">
+
+    </div>
+    <div class="form-container">
+      <div class="center">
+        <form id="form-area" name="form" action="/sign-up" method="POST">
+          <div class="title">
+            <h1>Let's do this</h1>
+
+          </div>
+          <div class="input-group">
+            <label for="first_name">First Name</label>
+            <input id="first_name" name="first_name" placeholder="first_name" type="text" required />
+          </div>
+          <div class="input-group">
+            <label for="last_name">Last Name</label>
+            <input id="last_name" name="last_name" placeholder="last_name" type="text" required />
+          </div>
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" placeholder="username" type="text" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="password"
+              placeholder="password" aria-describedby="password" required>
+          </div>
+          <div class="input-group">
+            
+            <label for="passwordConfirmation">Confirm Password</label>
+            <input id="passwordConfirmation" name="passwordConfirmation" type="password" aria-describedby="password confirmation"
+              placeholder="password Confirmation" required>
+
+            <div class="password-requirements">
+              <p class="requirement hidden error" id="match">* Passwords must match</p>
+            </div>
+          </div>
+          <div class="btn-form">
+            <button class="btn" type="submit" id="signin">Sign Up</button>
+
+          </div>
+
+
+          <div class="or">or</div>
+          <div class="login-link">
+            <p>Already have an account? <a href="/log-in">Login</a></p>
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/sign-up-form.js"></script>
+</body>
+
+</html>
