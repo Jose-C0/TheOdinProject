@@ -1,0 +1,23 @@
+<nav>
+  <div class="container-nav">
+    <ul class="left-links">
+      <li><a href="/member-join"><img class="img-odin"
+        src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+        alt="odin"></a></li>
+      <li><a href="/">Clubhouse</a></li>
+    </ul>
+    <ul class="right-links">
+      <% if(locals.user) { %> 
+        <li><p> 
+          WELCOME BACK <%= locals.user.username %>
+        </p>
+        </li>
+        <li><a href="/log-out"> Log-out </a></li>
+      <% } else { %>
+        <li><a href="/log-in"> Log-in </a></li>
+        <li><a href="/sign-up"> Sign-up </a></li>
+      <% } %>
+
+    </ul>
+  </div>
+</nav>

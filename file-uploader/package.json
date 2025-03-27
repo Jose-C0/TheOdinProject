@@ -1,0 +1,47 @@
+{
+  "name": "file-uploader",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
+    "deploy": "node src/app.js",
+    "formatter": "semistandard --fix"
+  },
+  "prisma": {
+    "schema": "./src/db/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "bcrypt": "5.1.1",
+    "dotenv": "16.4.7",
+    "ejs": "3.1.10",
+    "express": "4.21.2",
+    "express-session": "1.18.1",
+    "express-validator": "7.2.1",
+    "passport": "0.7.0",
+    "passport-local": "1.0.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "6.5.0",
+    "nodemon": "3.1.9",
+    "prisma": "6.5.0",
+    "semistandard": "17.0.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ignore": [
+      "*.test.ts"
+    ],
+    "delay": "3",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

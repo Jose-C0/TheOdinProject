@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/index.css" />
+  <link rel="stylesheet" href="css/pages/products.css" />
+
+</head>
+
+<body class="grid-index">
+  <header><%- include('../../partials/nav.ejs') %></header>
+
+  <main>
+    <section class="box-products">
+      <% prodts.forEach(item=> { %>
+        <div class="card">
+          <img src="images/<%= item.product_name %>.jpg" alt=<%=item.product_name %> class="img-card">
+        <h2>
+          <%= item.product_name %>
+        </h2>
+        <!-- product_name quantity_in_stock unit_price expiration_date 
+        category_name description supplier_name contact_name -->
+        <p class="price">$ <%= item.unit_price %>
+        </p>
+        <p><button>Detail</button></p>
+      </div>
+      <% }); %>
+    </section>
+      
+  </main>
+
+  <%- include('../../partials/footer.ejs') %>
+</body>
+
+</html>
