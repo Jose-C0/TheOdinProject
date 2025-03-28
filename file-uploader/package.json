@@ -2,19 +2,17 @@
   "name": "file-uploader",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "main": "src/app.mjs",
+  "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon src/app.mjs",
+    "dev": "nodemon src/app.js",
     "db:deploy": "npx prisma migrate deploy && npx prisma generate",
-    "deploy": "node src/app.mjs",
+    "deploy": "node src/app.js",
     "formatter": "semistandard --fix"
   },
   "prisma": {
-    "schema": "src/db/prisma/schema.prisma"
+    "schema": "./src/db/prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "6.5.0",
     "bcrypt": "5.1.1",
     "dotenv": "16.4.7",
     "ejs": "3.1.10",
@@ -25,6 +23,7 @@
     "passport-local": "1.0.0"
   },
   "devDependencies": {
+    "@prisma/client": "6.5.0",
     "nodemon": "3.1.9",
     "prisma": "6.5.0",
     "semistandard": "17.0.0"
@@ -37,7 +36,7 @@
       "*.test.ts"
     ],
     "delay": "3",
-     "execMap": {  
+    "execMap": {
       "ts": "ts-node"
     }
   },

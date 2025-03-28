@@ -22,17 +22,16 @@ services:
           path: ./package.json 
           target: package.json 
     env_file:
-      - path: ./.env
+      - .env.prod
     networks:
-      - app
-      - prisma-network
+      - file-uploader-network
 
   postgres_server_db:
     container_name: postgres_server_db
     image: postgres:17.1
     restart: always
-    env_file:
-      - path: ./.env
+    # env_file:
+    #   - path: ./.env.prod
     environment:
       - POSTGRES_DB=${DATABASE_DB}
       - POSTGRES_USER=${USER_DB}
@@ -40,7 +39,7 @@ services:
     ports:
       - "${PUBLIC_PORT_DB}:5432"
     networks:
-      - prisma-network
+      - file-uploader-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${USER_DB} -d ${DATABASE_DB}"]
       interval: 5s
@@ -64,9 +63,9 @@ services:
     ports:
       - "5555:5555"
     env_file:
-      - ./.env
+      - .env.prod
     networks:
-      - prisma-network
+      - file-uploader-network
     depends_on:
       postgres_server_db:
         condition: service_healthy
@@ -74,9 +73,8 @@ services:
         condition: service_started
 
 networks:
-  app:
-  prisma-network:
-    name: prisma-network
+  file-uploader-network:
+    name: file-uploader-network
 
 volumes:
   postgres_data_prisma:
