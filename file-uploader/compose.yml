@@ -19,7 +19,8 @@ services:
           ignore:
             - node_modules/
         - action: rebuild
-          path: package.json
+          path: ./package.json 
+          target: package.json 
     env_file:
       - path: ./.env
     networks:
@@ -30,16 +31,18 @@ services:
     container_name: postgres_server_db
     image: postgres:17.1
     restart: always
+    env_file:
+      - path: ./.env
     environment:
       - POSTGRES_DB=${DATABASE_DB}
-      - POSTGRES_USER=${postgres}
+      - POSTGRES_USER=${USER_DB}
       - POSTGRES_PASSWORD=${PASSWORD_DB}
     ports:
       - "${PUBLIC_PORT_DB}:5432"
     networks:
       - prisma-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U prisma -d postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${USER_DB} -d ${DATABASE_DB}"]
       interval: 5s
       timeout: 2s
       retries: 20

@@ -1,9 +1,16 @@
 // const db = require("../db/query.js");
+// import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
-async function getIndex(req, res) {
-  // const messages = await db.getAllmsg();
-    res.render("pages/index.ejs");
- /*
+const prisma = new PrismaClient();
+
+async function getIndex (req, res) {
+  // const allUsers = await prisma.user.findMany();
+  // const createUser = await prisma.create
+
+  console.log(createUser);
+  res.render("pages/index.ejs");
+  /*
   if (req.isUnauthenticated()) {
     res.render("pages/index.ejs", { messages });
    } else {
@@ -13,5 +20,4 @@ async function getIndex(req, res) {
 */
 }
 
-
-export { getIndex }
+export { getIndex };

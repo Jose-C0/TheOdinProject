@@ -11,9 +11,10 @@
     "formatter": "semistandard --fix"
   },
   "prisma": {
-    "schema": "src/prisma/schema.prisma"
+    "schema": "src/db/prisma/schema.prisma"
   },
   "dependencies": {
+    "@prisma/client": "6.5.0",
     "bcrypt": "5.1.1",
     "dotenv": "16.4.7",
     "ejs": "3.1.10",
