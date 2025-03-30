@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(session({ secret: 'cats', resave: false, saveUninitialized: false }));
 // app.use(passport.session());
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ eded: false }));
 
 // routes
 app.use(routes);

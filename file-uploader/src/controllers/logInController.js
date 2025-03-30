@@ -1,6 +1,11 @@
-const db = require("../db/query.js");
-const passportLocalStrategy = require("../middleware/passportLocalStrategy.js");
+// const db = require("../db/query.js");
+// const passportLocalStrategy = require("../middleware/passportLocalStrategy.js");
 
+async function getLoginForm (req, res) {
+  res.render('pages/log-in.ejs');
+}
+
+/*
 async function getLoginForm(req, res) {
   if (req.user !== undefined) res.redirect("/");
   const messages = await db.getAllmsg();
@@ -10,7 +15,6 @@ async function getLoginForm(req, res) {
     res.render("pages/index.ejs", { messages, user: req.user });
   }
 }
+*/
 
-function handleForm(req, res, next) {}
-
-module.exports = { getLoginForm, handleForm, passportLocalStrategy };
+module.exports = { getLoginForm };
