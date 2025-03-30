@@ -21,36 +21,36 @@
     <div class="title">
       <h1>Messages</h1>
       <%# if (locals.user) { %>
-         <a href="/create-msg">Create a new message</a> 
-      <%# } %>
+        <a href="/create-msg">Create a new message</a>
+        <%# } %>
     </div>
     <div class="container-msg">
 
-        <%# messages.forEach(item=> { %>
-          <dl class="card">
-            <%# if (locals.user && locals.user.is_member != undefined && locals.user.is_member === true ) {%>
-              <dt class="info-card-span author">
+      <%# messages.forEach(item=> { %>
+        <dl class="card">
+          <%# if (locals.user && locals.user.is_member !=undefined && locals.user.is_member===true ) {%>
+            <dt class="info-card-span author">
+              <p>
+                <%#= item.username %>
+              </p>
+              <p>
+                <%#= item.date.toDateString() %>
+              </p>
+            </dt>
+
+            <%# } %>
+              <dt class="info-card-span text">
                 <p>
-                  <%#= item.username %>
-                </p>
-                <p>
-                  <%#= item.date.toDateString() %>
+                  <%#= item.title %>
                 </p>
               </dt>
-
-              <%# } %>
-                <dt class="info-card-span text">
-                  <p>
-                    <%#= item.title %>
-                  </p>
-                </dt>
-                <dt class="info-card-span text">
-                  <p>
-                    <%#= item.description %>
-                  </p>
-                </dt>
-          </dl>
-          <%# }) %>
+              <dt class="info-card-span text">
+                <p>
+                  <%#= item.description %>
+                </p>
+              </dt>
+        </dl>
+        <%# }) %>
 
 
     </div>
