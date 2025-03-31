@@ -31,3 +31,10 @@ enum Role {
   USER
   ADMIN
 }
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String   @db.VarChar()  
+  expiresAt   DateTime
+}

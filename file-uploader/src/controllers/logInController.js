@@ -1,5 +1,4 @@
 // const db = require("../db/query.js");
-// const passportLocalStrategy = require("../middleware/passportLocalStrategy.js");
 
 async function getLoginForm (req, res) {
   res.render('pages/log-in.ejs');
