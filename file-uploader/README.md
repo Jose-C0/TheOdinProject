@@ -43,7 +43,7 @@ Docker needs to be passed the service name in order to connect to the DB.
 
 ## Docker commands  
 
-To run the container run:  
+Run container:  
 
 ```sh
 docker compose up --watch
