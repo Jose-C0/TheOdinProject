@@ -14,17 +14,24 @@ async function getSignupForm (req, res) {
 async function create (req, res, next) {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    await 
-    
-    pool.query(
-      'insert into users (username, password, first_name, last_name) values ($1, $2, $3, $4)',
-      [
-        req.body.username,
-        hashedPassword,
-        req.body.first_name,
-        req.body.last_name
-      ]
-    );
+    await prisma.create({
+      data: {
+        email: req.body.email,
+        name: req.body.name,
+        password: hashedPassword
+
+      }
+    });
+
+    // pool.query(
+    //   'insert into users (username, password, first_name, last_name) values ($1, $2, $3, $4)',
+    //   [
+    //     req.body.username,
+    //     hashedPassword,
+    //     req.body.first_name,
+    //     req.body.last_name
+    //   ]
+    // );
     // AUTHENTICATE
     res.redirect('/log-in');
   } catch (error) {
