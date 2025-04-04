@@ -1,26 +1,32 @@
 const express = require('express');
 
 const indexController = require('../controllers/indexController.js');
-const loginController = require('../controllers/logInController.js');
+const logInController = require('../controllers/logInController.js');
+const logOutController = require('../controllers/logOutController.js');
+
 const signUpController = require('../controllers/signUpController.js');
+
+const mdlSignUp = require('../middleware/validation/signUpValidation.js');
+const mdlLogIn = require('../middleware/validation/logInValidation.js');
 const auth = require('../middleware/auth/passportLocalStrategy.js');
 
 const router = express.Router();
 
 router.get('/', indexController.getIndex);
-
-router.get('/log-in', loginController.getLoginForm);
+router.get('/log-out', logOutController.getLogout);
 router.get('/sign-up', signUpController.getSignupForm);
-router.post('/sign-up', signUpController.create);
+router.get('/log-in', logInController.getLoginForm);
 
-// router.post('/sign-up', );
+router.post(
+  '/log-in',
+  mdlLogIn.validateUser(),
+  auth.passportLocalStrategy.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/log-in'
+  })
 
-// router.post(
-//   '/log-in',
-//   auth.Authenticator('local', {
-//     successRedirect: '/',
-//     failureRedirect: '/log-in'
-//   })
-// );
+);
 
-(module.exports = router);
+router.post('/sign-up', mdlSignUp.validateUser(), signUpController.create);
+
+module.exports = router;

@@ -23,11 +23,17 @@ async function create (req, res, next) {
     });
 
     // AUTHENTICATE
-    // res.redirect('/log-in');
+    res.redirect('/log-in');
   } catch (error) {
     console.error(error);
     next(error);
   }
 }
 
-module.exports = { getSignupForm, create };
+async function queryEmailNoInUse (value) {
+  return await prisma.user.findFirst({
+    where: { email: value }
+  });
+}
+
+module.exports = { getSignupForm, create, queryEmailNoInUse };

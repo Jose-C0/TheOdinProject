@@ -1,9 +1,9 @@
-async function getLogout(req, res, next) {
+async function getLogout (req, res, next) {
   req.logout((err) => {
     if (err) {
       return next(err);
     }
-    res.redirect("/");
+    res.redirect('/');
   });
 }
-module.exports = { getLogout }
+module.exports = { getLogout };

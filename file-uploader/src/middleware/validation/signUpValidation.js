@@ -1,29 +1,30 @@
-const { body, oneOf, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 
-const leastOneErr =
-  'At least one valid name field (first_name, last_name, or username) must be provided';
+const queryEmailNoInUse = require('../../controllers/signUpController.js');
 
 const validateUser = () => {
   return [
-    oneOf(
-      [
-        body('first_name').trim()/* .isEmpty() */.isLength({ max: 50 }),
-        body('last_name').trim()/* .isEmpty() */.isLength({ max: 50 }),
-        body('username').trim()/* .isEmpty() */.isLength({ max: 255 })
-      ],
-      { message: `${leastOneErr}` }
-    ),
-    body('password')
+    body('email')
+      .notEmpty()
       .trim()
-      // .isEmpty()
-      .isLength({ max: 255 })
-      .withMessage('Password invalid'),
+      .normalizeEmail()
+      .custom((value) => {
+        queryEmailNoInUse(value);
+      })
+      .withMessage('Email not valid'),
+    body('name')
+      .notEmpty()
+      .trim()
+      .isAlphanumeric()
+      .withMessage('name not valid'),
+    body('password').notEmpty().trim(),
     body('passwordConfirmation')
+      .notEmpty()
       .trim()
       .custom((value, { req }) => {
         return value === req.body.password;
       })
-      .withMessage('password must match'),
+      .withMessage('password must match, try again...'),
 
     (req, res, next) => {
       const errors = validationResult(req);
