@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 async function getSignupForm (req, res) {
   if (req.isUnauthenticated()) {
-    res.render('pages/sign-up-form.ejs');
+    res.render('pages/sign-up.ejs');
   } else {
     res.redirect('/');
   }
@@ -14,26 +14,16 @@ async function getSignupForm (req, res) {
 async function create (req, res, next) {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    await prisma.create({
+    await prisma.user.create({
       data: {
         email: req.body.email,
         name: req.body.name,
         password: hashedPassword
-
       }
     });
 
-    // pool.query(
-    //   'insert into users (username, password, first_name, last_name) values ($1, $2, $3, $4)',
-    //   [
-    //     req.body.username,
-    //     hashedPassword,
-    //     req.body.first_name,
-    //     req.body.last_name
-    //   ]
-    // );
     // AUTHENTICATE
-    res.redirect('/log-in');
+    // res.redirect('/log-in');
   } catch (error) {
     console.error(error);
     next(error);
