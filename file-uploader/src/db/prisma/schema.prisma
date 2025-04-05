@@ -15,18 +15,10 @@ model User {
   name      String?
   password  String
   role      Role     @default(USER)
-  posts     Post[]
+  Folder    Folder[]
+  File      File[]
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  published Boolean  @default(false)
-  title     String   @db.VarChar(255)
-  authorId  Int?
-  author    User?    @relation(fields: [authorId], references: [id])
-}
 
 enum Role {
   USER
@@ -36,6 +28,29 @@ enum Role {
 model Session {
   id        String   @id
   sid       String   @unique
-  data      String   @db.VarChar()  
-  expiresAt   DateTime
+  data      String   @db.VarChar()
+  expiresAt DateTime
+}
+
+model Folder {
+  id        Int      @id @default(autoincrement())
+  name      String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  files     File[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  name      String
+  size      Int
+  path      String // For local storage
+  url       String? // For cloud storage
+  folder    Folder?  @relation(fields: [folderId], references: [id])
+  folderId  Int?
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  createdAt DateTime @default(now())
 }
