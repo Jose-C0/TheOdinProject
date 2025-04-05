@@ -3,6 +3,16 @@
 .title-section-edit {
   font-size: 1.8rem;
 }
+ .btn {
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
 /* MAIN */
 main {

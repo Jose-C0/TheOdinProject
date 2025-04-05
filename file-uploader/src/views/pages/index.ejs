@@ -22,11 +22,14 @@
     <div class="title">
       <h1>Messages</h1>
       <%# if (locals.user) { %>
-        <a href="/create-msg">Create a new message</a>
+
         <%# } %>
     </div>
     <div class="container-msg">
-
+<form action="/file-upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="avatar"  />
+  <input type="submit" value="Get me the stats!" class="btn btn-default">
+</form>
       <%# messages.forEach(item=> { %>
         <dl class="card">
           <%# if (locals.user && locals.user.is_member !=undefined && locals.user.is_member===true ) {%>

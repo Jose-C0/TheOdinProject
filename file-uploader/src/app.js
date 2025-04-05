@@ -1,7 +1,7 @@
 const path = require('node:path');
 const express = require('express');
-
 const expressSession = require('express-session');
+const multer = require('multer');
 
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
 const { PrismaClient } = require('../src/db/generated/prisma_client');
@@ -14,6 +14,7 @@ const routes = require('./routes/index.js');
 const app = express();
 
 // config
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

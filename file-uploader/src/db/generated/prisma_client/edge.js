@@ -149,7 +149,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/data/config/lab/odin/file-uploader/src/db/generated/prisma_client",
+      "value": "/home/userone/TheOdinProject/file-uploader/src/db/generated/prisma_client",
       "fromEnvVar": null
     },
     "config": {
@@ -163,7 +163,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/data/config/lab/odin/file-uploader/src/db/prisma/schema.prisma",
+    "sourceFilePath": "/home/userone/TheOdinProject/file-uploader/src/db/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -177,6 +177,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
