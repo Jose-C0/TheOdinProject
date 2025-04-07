@@ -7,3 +7,4 @@ async function getLogout (req, res, next) {
   });
 }
 module.exports = { getLogout };
+

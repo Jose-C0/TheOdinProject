@@ -30,12 +30,31 @@
         <input type="file" name="ftmp" />
         <input type="submit" value="Get me the stats!" class="btn btn-default">
       </form>
-      <%# messages.forEach(item=> { %>
+
+      <div>
+        <% myWorkSpace.map(item=> { %>
+          <div>
+            <%= item.name %>
+          </div>
+          <div>
+            <% item.files.forEach(file=> { %>
+              <p>
+                <%= file %>
+              </p>
+              <% }) %>
+          </div>
+          <% }) %>
+      </div>
+
+
+      <% myWorkSpace.map(item=> { %>
         <dl class="card">
           <%# if (locals.user && locals.user.is_member !=undefined && locals.user.is_member===true ) {%>
             <dt class="info-card-span author">
               <p>
-                <%#= item.username %>
+                <%= item.name %>
+                  <%#= req.locals.file %>
+                    <%#= item.name %>
               </p>
               <p>
                 <%#= item.date.toDateString() %>
@@ -44,9 +63,19 @@
 
             <%# } %>
               <dt class="info-card-span text">
-                <p>
-                  <%#= item.title %>
-                </p>
+
+                <% item.files.forEach(file=> { %>
+                  <p>
+                    <%= file %>
+                  </p>
+                  <% }) %>
+                    <%#= item.title %>
+                      <%# allfiles.forEach(fl=> { %>
+
+                        </p>
+
+                        <%#}) %>
+                          </p>
               </dt>
               <dt class="info-card-span text">
                 <p>
@@ -54,7 +83,7 @@
                 </p>
               </dt>
         </dl>
-        <%# }) %>
+        <% }) %>
 
 
     </div>
