@@ -1,8 +1,5 @@
 const express = require('express');
 
-// const multer = require('multer');
-// const upload = multer({ dest: '/tmp/' });
-
 const indexController = require('../controllers/indexController.js');
 const logInController = require('../controllers/logInController.js');
 const logOutController = require('../controllers/logOutController.js');
@@ -13,7 +10,6 @@ const mdlSignUp = require('../middleware/validation/signUpValidation.js');
 const mdlLogIn = require('../middleware/validation/logInValidation.js');
 const auth = require('../middleware/auth/passportLocalStrategy.js');
 const flup = require('../middleware/file/upload.js');
-
 const router = express.Router();
 
 router.get('/', indexController.getIndex);
