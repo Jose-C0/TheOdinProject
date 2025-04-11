@@ -48,7 +48,10 @@ async function handleFileUploadLogic (req, res, next) {
   res.redirect('/');
 }
 
-module.exports = { handleFileUploadLogic, processSingleFileUpload };
+module.exports = {
+  handleFileUploadLogic,
+  processSingleFileUpload
+};
 
 /*
     await prisma.file.create({

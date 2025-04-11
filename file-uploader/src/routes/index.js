@@ -10,6 +10,9 @@ const mdlSignUp = require('../middleware/validation/signUpValidation.js');
 const mdlLogIn = require('../middleware/validation/logInValidation.js');
 const auth = require('../middleware/auth/passportLocalStrategy.js');
 const flup = require('../middleware/file/upload.js');
+
+const fileController = require('../middleware/file/fileUploadController.js');
+
 const router = express.Router();
 
 router.get('/', indexController.getIndex);
@@ -29,6 +32,10 @@ router.post(
 
 router.post('/sign-up', mdlSignUp.validateUser(), signUpController.create);
 
+// create
 router.post('/file-upload', flup.processSingleFileUpload(), flup.handleFileUploadLogic);
-
+// read
+router.get('/file-upload/:id', fileController.getAll);
+// update
+// delete
 module.exports = router;
