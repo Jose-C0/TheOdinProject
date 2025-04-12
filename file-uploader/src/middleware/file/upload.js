@@ -14,10 +14,11 @@ const fileStorage = multer.diskStorage({
 
 });
 
-const fileUpload = multer({ storage: fileStorage });
+// const fileUpload = multer({ storage: fileStorage });
 // const upload = multer({ dest: '/tmp/' });
 
 function processSingleFileUpload () {
+  const fileUpload = multer({ storage: fileStorage });
   return fileUpload.single('ftmp');
 }
 
@@ -52,18 +53,3 @@ module.exports = {
   handleFileUploadLogic,
   processSingleFileUpload
 };
-
-/*
-    await prisma.file.create({
-        data: {
-          name: req.file.filename,
-          size: req.file.size,
-          path: req.file.path ,
-          url: req.file.filename + req.file.destination,
-          folderId: 1
-          userId: 1 // TODO: USAR --> req.user.id
-          // createdAt:  Date.now()
-
-    }
-      });
-*/

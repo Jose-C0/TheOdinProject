@@ -39,8 +39,8 @@ model Folder {
   userId    Int
   files     File[]
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
+  updatedAt DateTime @default(now())
+} 
 
 model File {
   id        Int      @id @default(autoincrement())

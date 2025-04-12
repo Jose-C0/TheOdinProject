@@ -34,8 +34,17 @@ router.post('/sign-up', mdlSignUp.validateUser(), signUpController.create);
 
 // create
 router.post('/file-upload', flup.processSingleFileUpload(), flup.handleFileUploadLogic);
+
 // read
-router.get('/file-upload/:id', fileController.getAll);
-// update
+// router.get('/file-upload/:id', fileController.getAll);
+
 // delete
+router.delete('/file-upload/folder/delete/:id', fileController.deleteFolder);
+// router.delete("/file-upload/file/delete/:id", fileController.deleteFile);
+// router.update('/file-upload/folder/update/:id', fileController);
+// router.update("/file-upload/file/update/:id", fileController);
+
+// update
+router.patch('/file-upload/folder/update/:id', fileController.updateFolder);
+
 module.exports = router;
