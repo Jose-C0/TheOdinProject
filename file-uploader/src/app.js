@@ -1,6 +1,7 @@
 const path = require('node:path');
 const express = require('express');
 const expressSession = require('express-session');
+const cors = require('cors');
 // const multer = require('multer');
 
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
@@ -18,6 +19,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors());
 
 app.use(
   expressSession({

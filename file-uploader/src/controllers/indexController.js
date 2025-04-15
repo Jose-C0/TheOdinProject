@@ -39,9 +39,10 @@ const quryWorkSpace = async () => {
   return myWorkSpace.map(x => {
     return { name: x.name, files: x.files.map((item) => item.name) };
   });
+  //  Output
   //  [
   //  { name: '/tmp/', files: [ [Object], [Object] ] },
   //  { name: '/temp/2', files: [] }
   //  ]
 };
-module.exports = { getIndex };
+module.exports = { getIndex, quryWorkSpace };

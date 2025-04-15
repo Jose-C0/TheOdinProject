@@ -1,27 +1,27 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import './App.css';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Fragment } from 'react';
-import './App.css'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import OtherPage from './OtherPage'
-// import MainComponent from './MainComponent'
+import MainComponent from './components/MainComponent';
+import OtherPage from './components/OtherPage';
 
-function App() {
+function App () {
   return (
-     <Router>
+    <Router>
       <Fragment>
-      <header>
-        <div> This is a multicontainer app </div>
-        <Link to='/'> Home </Link>
-        <Link to='/otherpage'> Other page </Link>
-      </header>
-      <div>
-        <Route path='/otherpage' component={OtherPage} />
-      </div>
+        <header>
+          <div> This is a multicontainer app </div>
+          <Link to='/'> Home </Link>
+          <Link to='/otherpage'> Other Page </Link>
+        </header>
+        <div>
+          <Routes>
+            <Route exact path='/' Component={MainComponent} />
+            <Route path='/otherpage' Component={OtherPage} />
+          </Routes>
+        </div>
       </Fragment>
     </Router>
-    );
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,97 @@
+services:
+  react:
+    stdin_open: true
+    build: 
+      context: ./react
+      dockerfile: Dockerfile.dev
+
+  
+  nginx:
+    depends_on:
+      - api-express
+      - react
+    restart: always
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "3050:80"
+
+
+  api-express:
+    container_name: api-express
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT_NODE_SERVER}:${PORT_NODE_SERVER_DOCKER}"
+    stdin_open: true
+    tty: true  # Keeps the container running for debugging
+    depends_on:
+      postgres_server_db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./package.json 
+          target: package.json 
+    env_file:
+      - .env.prod
+    networks:
+      - file-uploader-network
+
+  postgres_server_db:
+    container_name: postgres_server_db
+    image: postgres:17.1
+    restart: always
+    # env_file:
+    #   - path: ./.env.prod
+    environment:
+      - POSTGRES_DB=${DATABASE_DB}
+      - POSTGRES_USER=${USER_DB}
+      - POSTGRES_PASSWORD=${PASSWORD_DB}
+    ports:
+      - "${PUBLIC_PORT_DB}:5432"
+    networks:
+      - file-uploader-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${USER_DB} -d ${DATABASE_DB}"]
+      interval: 5s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - postgres_data_prisma:/var/lib/postgresql/data
+    command: postgres -c listen_addresses='*'
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres_server_db
+      ADMINER_DESIGN: pepa-linha
+      # ADMINER_PLUGINS: codemirror
+    depends_on:
+      postgres_server_db:
+        condition: service_healthy
+    networks:
+      - file-uploader-network
+
+networks:
+  file-uploader-network:
+    name: file-uploader-network
+
+volumes:
+  postgres_data_prisma:
+    name: "postgres_data_prisma"
+
+ 
