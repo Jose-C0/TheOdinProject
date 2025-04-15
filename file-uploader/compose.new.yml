@@ -1,10 +1,25 @@
 services:
-  frontend:
-  
-  express:
+  react:
+    stdin_open: true
+    build: 
+      context: ./react
+      dockerfile: Dockerfile.dev
 
-  app:
-    container_name: app-file-uploader
+  
+  nginx:
+    depends_on:
+      - api-express
+      - react
+    restart: always
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "3050:80"
+
+
+  api-express:
+    container_name: api-express
     build:
       context: .
       dockerfile: Dockerfile
