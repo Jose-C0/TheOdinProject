@@ -1,6 +1,6 @@
 # Members Only
 
-This project appears to be a web application that includes basic functionalities such as registration, login, logout, creating messages and adding members. The application is structured following the MVC (Model-View-Controller).
+This project is be a web application that includes basic functionalities such as registration, login, logout, creating messages and adding members. The application is structured following the MVC (Model-View-Controller).
 
 Live in render: https://members-only-wu4a.onrender.com/
 
