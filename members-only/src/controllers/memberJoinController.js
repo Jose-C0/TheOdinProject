@@ -37,41 +37,5 @@ async function confirmSecretAccess(req, res) {
   }
 }
 
-/*
-async function comfirmSecretAccess(req, res) {
-
-  async (req, res, next) => {
-    const getSecret = await db.getSecretCode(req.body.secretCode);
-    console.log("req.body.secretCode!!!!", req.body.secretCode);
-    console.log("getSecret!!!!", getSecret);
-
-    // if (req.body.secretCode !== getSecret) 
-
-    // if (req.body.secretCode !== getSecret) res.redirect("/member-join");
-    //next();
-  }
-  
-
-  if (!req.user.is_member) {
-    await db.updateStatusMember(req.user.id, req.body.secretCode);
-  }
-
-  res.redirect("/");
-  
-
- 
-  console.log(req.user.is_member);
-    
-  if (req.user.is_member) {
-    
-  
-  console.log("funciona")
-  }
-  else {
-    res.send("Incorrect")
-  }
-     
-}
-*/
 
 module.exports = { getMemberJoinForm, confirmSecretAccess };
