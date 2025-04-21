@@ -22,11 +22,11 @@ services:
   
   postgres_server_test_odin:
     container_name: postgres_server_test_odin
-    # image: postgres:17.1 
-    build: ./scripts/
-    healthcheck:
-      test: ["CMD", "bash", "-c", "./dbIsEmpty.sh"]
-      start_period: 10s
+    image: postgres:17.1 
+    #build: ./scripts/
+    #healthcheck:
+    #  test: ["CMD", "bash", "-c", "./dbIsEmpty.sh"]
+    #  start_period: 10s
     env_file:
       - path: ./.env
     environment:
