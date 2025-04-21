@@ -18,8 +18,7 @@ services:
     depends_on:
       - postgres_server_test_odin
     networks:
-      - inventory-app-network
-      - adminer-network
+      - app-network
   
   postgres_server_test_odin:
     container_name: postgres_server_test_odin
@@ -41,7 +40,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
-      - adminer-network
+      - app-network
   
   adminer:
     image: adminer
@@ -52,15 +51,11 @@ services:
     depends_on:
       - postgres_server_test_odin
     networks:
-      - adminer-network
+      - app-network
 
 volumes:
   postgres-data:
 
 networks:
-  adminer-network:
-    name: db_adminer-network
-  inventory-app-network:
- 
+  app-network:
 
- 
