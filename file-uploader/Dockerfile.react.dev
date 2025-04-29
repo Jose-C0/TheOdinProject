@@ -1,0 +1,16 @@
+# 1. For build React app
+# syntax=docker/dockerfile:1.4
+ARG NODE_VERSION=20.13.1
+
+FROM node:${NODE_VERSION}-alpine AS development
+
+WORKDIR /frontend
+
+COPY ./react .
+
+# Use npm ci when you have not already run npm install
+# RUN npm install
+RUN npm ci
+
+CMD [ "npm", "run", "dev" ]
+ 

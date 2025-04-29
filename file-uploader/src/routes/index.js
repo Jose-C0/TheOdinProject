@@ -16,7 +16,7 @@ const fileController = require('../middleware/file/fileUploadController.js');
 const router = express.Router();
 
 router.get('/', indexController.getIndex);
-router.get('/values', indexController.quryWorkSpace);
+router.get('/api/values', indexController.getAllFiles);
 router.get('/sign-up', signUpController.getSignupForm);
 router.get('/log-in', logInController.getLoginForm);
 router.get('/log-out', logOutController.getLogout);

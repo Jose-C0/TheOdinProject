@@ -20,6 +20,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.options('*', cors()); // include before other routes
 app.use(cors());
 
 app.use(

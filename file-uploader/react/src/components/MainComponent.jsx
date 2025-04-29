@@ -3,26 +3,25 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const MainComponent = () => {
-    const [values, setValues] = useState([]);
+  const [values, setValues] = useState([]);
 
-    const getAllNumbers = useCallback(async () => {
-      const values = await axios.get('/values');
-      setValues(values);
-    }, []);
+  const getAllNumbers = useCallback(async () => {
+    const values = await axios.get('/values');
+    setValues(values);
+  }, []);
 
-    return (
+  return (
+    <div>
+      <button onClick={getAllNumbers}> Get all numbers</button>
+      <div />
+      <span> Values </span>
       <div>
-       <button onClick={getAllNumbers}> Get all numbers</button>
-       <div></div>
-       <span> Values </span>
-      <div>
-        {values.map(item => (
-          <p> { item } </p>
+        {values.map((item) => (
+          <p> {item} </p>
         ))}
-        
       </div>
-      </div>
-    )
-}
+    </div>
+  );
+};
 
 export default MainComponent;

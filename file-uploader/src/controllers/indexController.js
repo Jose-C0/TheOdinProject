@@ -45,4 +45,11 @@ const quryWorkSpace = async () => {
   //  { name: '/temp/2', files: [] }
   //  ]
 };
-module.exports = { getIndex, quryWorkSpace };
+
+const getAllFiles = async (req, res) => {
+  const myWorkSpace = await quryWorkSpace();
+
+  res.status(200).json(myWorkSpace);
+};
+
+module.exports = { getIndex, quryWorkSpace, getAllFiles };
