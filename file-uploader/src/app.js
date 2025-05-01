@@ -14,15 +14,22 @@ const routes = require('./routes/index.js');
 
 const app = express();
 
-// config
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'public')));
+// config
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // app.options('*', cors()); // include before other routes
-app.use(cors());
-
+// app.use(
+//   cors({
+//     cors: 'http://react-nginx:5173'
+//     // cors: 'http://localhost:5173'
+//   })
+// );
+/*
 app.use(
   expressSession({
     cookie: {
@@ -43,8 +50,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.urlencoded({ eded: false }));
+*/
+
+app.use(cors());
+// app.options('*', cors()); // Include before other routes to handle pre-flight requests
+// const corsOptions = {
+//   origin: 'http://localhost:5173',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   credentials: true
+// };
+// app.use(cors(corsOptions));
 
 // routes
+
 app.use(routes);
 
 const PORT = process.env.PORT_NODE_SERVER ?? 3000;

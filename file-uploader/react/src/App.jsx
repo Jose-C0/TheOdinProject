@@ -20,6 +20,7 @@ function App () {
           <div />
           <Routes>
             <Route exact path="/values" Component={ListOfValues} />
+            
             {/* <Route exact path='/' Component={MainComponent} />
             <Route path='/otherpage' Component={OtherPage} /> */}
           </Routes>

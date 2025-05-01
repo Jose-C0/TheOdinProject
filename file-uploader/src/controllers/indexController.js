@@ -49,7 +49,7 @@ const quryWorkSpace = async () => {
 const getAllFiles = async (req, res) => {
   const myWorkSpace = await quryWorkSpace();
 
-  res.status(200).json(myWorkSpace);
+  res.send(myWorkSpace);
 };
 
 module.exports = { getIndex, quryWorkSpace, getAllFiles };
