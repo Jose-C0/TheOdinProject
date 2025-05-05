@@ -19,7 +19,7 @@ async function getIndex (req, res) {
   }
 }
 
-const quryWorkSpace = async () => {
+const queryWorkSpace = async () => {
   const filesById = await prisma.file.findMany({
     select: {
       id: true
@@ -46,10 +46,37 @@ const quryWorkSpace = async () => {
   //  ]
 };
 
-const getAllFiles = async (req, res) => {
-  const myWorkSpace = await quryWorkSpace();
+const queryMySpace = async () => {
+  const filesById = await prisma.file.findMany({
+    select: {
+      id: true
+    }
+  }).id;
+
+  const directories = await prisma.folder.findMany({
+    where: {
+      id: filesById
+    },
+    select: {
+      id: true,
+      name: true,
+      files: { select: { id: true, name: true } }
+    }
+  });
+
+  return directories;
+
+  //  Output
+  //  [
+  //  { id: 1, name: '/tmp/', files: [ [Object], [Object] ] },
+  //  { id: 2, name: '/temp/2', files: [] }
+  //  ]
+};
+
+const getDirHome = async (req, res) => {
+  const myWorkSpace = await queryMySpace();
 
   res.send(myWorkSpace);
 };
 
-module.exports = { getIndex, quryWorkSpace, getAllFiles };
+module.exports = { getIndex, queryWorkSpace, getDirHome };
