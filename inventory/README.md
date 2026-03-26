@@ -8,7 +8,7 @@ This project consists in:
 
 - Setting up a db in PostgreSQL.
 - Setting up and querying with node-postgres.
-- setting up docker compose.
+- Setting up docker compose.
 - Deploy on render.
 - Supabase to handle database operations
 
